@@ -420,4 +420,11 @@
     },
     "dune_village_neutral": {
       "label": "Làng Cát — Dune Village",
-      "type": "
+      "type": "safe_zone",
+      "subLocations": [
+        "dune_village_gate",
+        "dune_village_market"
+      ]
+    }
+  }
+}

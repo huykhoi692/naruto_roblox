@@ -514,7 +514,7 @@
       "effects": [
         { "type": "summon", "summonId": "toad_small", "summonHP": 500, "summonDuration": 30 }
       ],
-      "source": ["quest_q210_naruto_choice_A"],
+      "source": ["quest_q210_naruko_choice_A"],
       "pvpUsable": true,
       "description": "Triệu hồi cóc nhỏ chiến đấu cùng — tự tấn công địch gần nhất, cooldown 60 giây"
     },
@@ -580,7 +580,7 @@
       "effects": [
         { "type": "revive", "description": "Khi HP về 0: tự động kích hoạt một lần duy nhất mỗi lần deploy, hồi 30% HP tối đa" }
       ],
-      "source": ["villain_branch_orochimaru_offer", "reimei_hidden_quest_A"],
+      "source": ["villain_branch_orokimaru_offer", "reimei_hidden_quest_A"],
       "pvpUsable": true,
       "description": "Jutsu tái sinh — tự động kích hoạt khi chết lần đầu trong trận, hồi 30% HP. Cooldown 5 phút."
     },
@@ -610,4 +610,16 @@
       ],
       "source": ["postgame_jiraiya_quest_hero_ending_only"],
       "pvpUsable": true,
-      "description": "Trạng thái tiên nhân chưa hoàn chỉnh — 45 giây siêu mạnh, sau đó hóa đá 20 gi
+      "description": "Trạng thái tiên nhân chưa hoàn chỉnh — 45 giây siêu mạnh, sau đó hóa đá 20 giây. Cooldown 3 phút."
+    },
+
+    {
+      "id": "jutsu_strength_hundred",
+      "name": "Strength of a Hundred Seal",
+      "nameVi": "Ấn Lực Trăm Sức Mạnh",
+      "status": "deferred_arc4",
+      "note": "Jutsu dạy bởi npc_tsukade, điều kiện: choice_B_q409 AND village_rep >= 60. Chưa thiết kế full — placeholder để resolve dangling reference từ npc_tsukade.specialTeach."
+    }
+
+  ]
+}

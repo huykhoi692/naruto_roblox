@@ -200,7 +200,7 @@
         "baseAttack": 70,
         "lootTable": {
           "common":   { "weight": 60, "items": ["ryo_80", "ice_needle_x10"] },
-          "uncommon": { "weight": 30, "items": ["haku_mask_cosmetic", "bangcham_accessory"] },
+          "uncommon": { "weight": 30, "items": ["hakuren_mask_cosmetic", "bangcham_accessory"] },
           "rare":     { "weight": 9,  "items": ["jutsu_wi03_scroll"] },
           "legendary":{ "weight": 1,  "items": ["jutsu_n09_fragment"] }
         }
@@ -212,7 +212,7 @@
         "baseAttack": 110,
         "lootTable": {
           "common":   { "weight": 55, "items": ["ryo_200", "sand_material"] },
-          "uncommon": { "weight": 30, "items": ["jutsu_e04_scroll", "gaara_gourd_cosmetic"] },
+          "uncommon": { "weight": 30, "items": ["jutsu_e04_scroll", "garrek_gourd_cosmetic"] },
           "rare":     { "weight": 12, "items": ["jutsu_e03_scroll", "jutsu_f04_scroll"] },
           "legendary":{ "weight": 3,  "items": ["chunin_exam_finisher_badge"] }
         }
@@ -223,7 +223,7 @@
         "baseDefense": 60,
         "baseAttack": 130,
         "lootTable": {
-          "common":   { "weight": 50, "items": ["ryo_300", "uchiha_fan_cosmetic"] },
+          "common":   { "weight": 50, "items": ["ryo_300", "uchira_fan_cosmetic"] },
           "uncommon": { "weight": 30, "items": ["jutsu_l02_scroll", "jutsu_f03_scroll"] },
           "rare":     { "weight": 15, "items": ["jutsu_l03_scroll", "jutsu_n07_scroll"] },
           "legendary":{ "weight": 5,  "items": ["cursed_seal_material"] }
@@ -238,7 +238,7 @@
           "common":   { "weight": 45, "items": ["ryo_500", "snake_scale_material"] },
           "uncommon": { "weight": 30, "items": ["jutsu_l04_scroll", "jutsu_w04_scroll"] },
           "rare":     { "weight": 18, "items": ["jutsu_n08_scroll"] },
-          "legendary":{ "weight": 7,  "items": ["arc4_boss_badge", "orochimaru_cosmetic_set"] }
+          "legendary":{ "weight": 7,  "items": ["arc4_boss_badge", "orokimaru_cosmetic_set"] }
         }
       }
     }
