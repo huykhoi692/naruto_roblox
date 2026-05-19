@@ -1,0 +1,292 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "notes": [
+      "File này là nguồn sự thật duy nhất cho tất cả số liệu balance",
+      "Mọi system (Combat, PvP, Event) đều đọc từ file này — không hardcode số trong Lua",
+      "Thay đổi số liệu ở đây sẽ ảnh hưởng toàn bộ game ngay lập tức",
+      "Đánh dấu [NEEDS_TEST] cho các số chưa được test thực tế"
+    ]
+  },
+
+  "playerStats": {
+    "baseHP": 100,
+    "hpPerLevel": 18,
+    "baseChakra": 100,
+    "chakraPerLevel": 8,
+    "baseAttack": 10,
+    "attackPerLevel": 2.5,
+    "baseDefense": 5,
+    "defensePerLevel": 1.2,
+    "baseSpeed": 16,
+    "speedNote": "studs/giây trong Roblox, 16 là tốc độ đi bộ mặc định",
+    "maxLevel": 50,
+    "formulaNote": {
+      "hp": "baseHP + (hpPerLevel * level)",
+      "chakra": "baseChakra + (chakraPerLevel * level)",
+      "attack": "baseAttack + (attackPerLevel * level)",
+      "defense": "baseDefense + (defensePerLevel * level)"
+    }
+  },
+
+  "expSystem": {
+    "baseExpToLevel": 150,
+    "expScalingFactor": 1.15,
+    "formulaNote": "expRequired(level) = baseExpToLevel * (expScalingFactor ^ level)",
+    "expCurvePreview": {
+      "note": "Ước tính EXP cần để lên level tiếp theo — dùng để sanity check tốc độ grind",
+      "level1to2": 172,
+      "level5to6": 301,
+      "level10to11": 607,
+      "level15to16": 1228,
+      "level20to21": 2456,
+      "level30to31": 9932,
+      "level49to50": 162550
+    },
+    "expSources": {
+      "killNPC": { "base": 20, "levelMatchBonus": 1.5, "levelMismatchPenalty": 0.3 },
+      "killBoss": { "base": 500, "arcMultiplier": [1.0, 1.5, 2.0, 2.5] },
+      "completeQuest": { "base": 200, "tierMultiplier": [1.0, 1.3, 1.6, 2.0, 2.5] },
+      "eventParticipation": { "base": 300, "contributionBonus": 2.0 },
+      "pvpKill": { "base": 50, "levelGapBonus": 1.2 }
+    },
+    "note": "Giảm từ 1.45 → 1.15: arc 1–2 grind ~2–5h là target, tránh tường EXP ở arc 3–4. [NEEDS_TEST] sau khi có player data thực."
+  },
+
+  "skillPointSystem": {
+    "spPerLevel": 2,
+    "noClanBonusSP": 1,
+    "noClanBonusSPCap": 30,
+    "noClanCapNote": "No Clan nhận +1 SP/level tối đa 30 level đầu (level 30) — sau đó bonus giảm xuống 0 để tránh late game gap quá lớn",
+    "jutsuLearnCost": {
+      "tier1": 1,
+      "tier2": 3,
+      "tier3": 6,
+      "tier4": 11,
+      "tier5": 20
+    },
+    "affinityDiscount": 0.30,
+    "affinityDiscountNote": "Jutsu đúng Chakra Affinity: learnCostSP * 0.7 (làm tròn lên)"
+  },
+
+  "chakraSystem": {
+    "regenPerSecond": 3,
+    "regenInCombatMultiplier": 0.4,
+    "regenOutOfCombatMultiplier": 1.0,
+    "combatCooldownSeconds": 5,
+    "combatCooldownNote": "Không bị/gây damage trong 5 giây = out of combat",
+    "affinityDamageBonus": 0.15,
+    "nonAffinityPenalty": 0,
+    "nonAffinityNote": "Không phạt khi dùng jutsu sai hệ — chỉ không nhận bonus"
+  },
+
+  "damageFormula": {
+    "formula": "finalDamage = (jutsuBaseDamage + attackStat) * affinityMult * levelScaling * defenseMitigation * randomVariance",
+    "components": {
+      "affinityMult": {
+        "matching": 1.15,
+        "nonMatching": 1.0
+      },
+      "levelScaling": {
+        "formula": "1 + (attackerLevel - defenderLevel) * 0.02",
+        "cap": 1.30,
+        "floor": 0.70,
+        "note": "Chênh lệch level tạo ra tối đa 30% damage bonus/penalty — không quá mất cân bằng"
+      },
+      "defenseMitigation": {
+        "formula": "1 - (defenderDefense / (defenderDefense + 100))",
+        "note": "Công thức diminishing returns — defense 100 giảm 50% damage, 200 giảm 67%, không bao giờ đạt 100%"
+      },
+      "randomVariance": {
+        "min": 0.95,
+        "max": 1.05,
+        "note": "±5% random mỗi đòn để tránh damage quá đều"
+      }
+    }
+  },
+
+  "pvpSystem": {
+    "levelGap": {
+      "maxGap": 15,
+      "enforcement": "absolute",
+      "noExceptions": true,
+      "note": "Chênh lệch > 15 level = không thể gây damage cho nhau. Áp dụng tuyệt đối kể cả trong event."
+    },
+    "factionWar": {
+      "factions": ["village", "reimei"],
+      "territoryResetDay": "monday",
+      "territoryResetHour": 0,
+      "zones": ["tide_province", "chunin_zone", "echo_stronghold", "tsukade_region"],
+      "contestedZone": {
+        "dropRateBonus": 0.20,
+        "pvpEnabled": true,
+        "note": "Zone bị contested = cả 2 faction đang cạnh tranh — drop rate +20%"
+      },
+      "controlledZone": {
+        "enemyFactionDebuff": {
+          "damageReduction": 0.05,
+          "note": "Debuff nhỏ khi vào zone địch kiểm soát — đủ để có cảm giác, không quá punishing"
+        }
+      },
+      "sameFactionPvP": false,
+      "sameFactionNote": "Cùng faction tuyệt đối không đánh nhau được"
+    },
+    "safezones": ["konohara_hub", "dune_village_neutral"],
+    "respawnCooldown": 10,
+    "dropOnDeath": {
+      "enabled": false,
+      "note": "Không drop item khi chết trong PvP — tránh griefing và toxic behavior"
+    }
+  },
+
+  "eventSystem": {
+    "brackets": [
+      { "id": "bracket_1", "minLevel": 1,  "maxLevel": 15, "label": "Genin Mới" },
+      { "id": "bracket_2", "minLevel": 16, "maxLevel": 25, "label": "Genin Thường" },
+      { "id": "bracket_3", "minLevel": 26, "maxLevel": 35, "label": "Chunin" },
+      { "id": "bracket_4", "minLevel": 36, "maxLevel": 50, "label": "Jonin" }
+    ],
+    "bracketNote": "[NEEDS_TEST] Con số bracket cần điều chỉnh sau khi có dữ liệu player distribution thực tế",
+    "rewardTiers": {
+      "top10Percent": "tier_S",
+      "top25Percent": "tier_A",
+      "top50Percent": "tier_B",
+      "participated": "tier_C",
+      "note": "Tính % trong bracket của mình — top 10% bracket Genin Mới nhận S reward dù damage thấp hơn bracket cao"
+    },
+    "factionScore": {
+      "damageWeight": 0.70,
+      "objectiveWeight": 0.30,
+      "note": "70% score từ tổng damage faction, 30% từ objective hoàn thành — khuyến khích phối hợp"
+    },
+    "objectiveTypes": [
+      { "id": "obj_protect_npc", "label": "Bảo Vệ NPC", "scoreValue": 100 },
+      { "id": "obj_break_shield", "label": "Phá Shield Boss", "scoreValue": 150 },
+      { "id": "obj_lure_mob", "label": "Dẫn Dụ Mob", "scoreValue": 80 },
+      { "id": "obj_revive_ally", "label": "Hồi Sinh Đồng Đội", "scoreValue": 120 }
+    ],
+    "bossSchedule": {
+      "zaborax": { "zone": "tide_province", "intervalMinutes": 30, "arc": 1 },
+      "garrek":  { "zone": "chunin_zone",  "intervalMinutes": 45, "arc": 2 },
+      "sound_four_jirobo":   { "zone": "echo_stronghold", "intervalMinutes": 35, "arc": 3 },
+      "sound_four_tayuya":   { "zone": "echo_stronghold", "intervalMinutes": 35, "arc": 3 },
+      "sound_four_kidomaru": { "zone": "echo_stronghold", "intervalMinutes": 40, "arc": 3 },
+      "sound_four_sakon":    { "zone": "echo_stronghold", "intervalMinutes": 40, "arc": 3 },
+      "orokimaru": { "zone": "tsukade_region", "intervalMinutes": 60, "arc": 4 }
+    }
+  },
+
+  "bossStats": {
+    "hpScalingByServer": 1.0,
+    "hpScalingNote": "Tương lai: scale HP boss theo số player trong server — cần test trước khi enable",
+    "hpContextNote": "storyHP: dùng khi boss xuất hiện trong quest chain (solo hoặc nhóm nhỏ 2–4 người). eventHP: dùng khi boss spawn theo lịch event (toàn server tham gia). Hai context này gọi boss cùng prefab nhưng khác HP pool — không hardcode trong Lua.",
+    "bosses": {
+      "zaborax": {
+        "storyHP": 8000,
+        "eventHP": 30000,
+        "baseDefense": 40,
+        "baseAttack": 80,
+        "lootTable": {
+          "common":   { "weight": 60, "items": ["ryo_100", "antidote", "kunai_x5"] },
+          "uncommon": { "weight": 30, "items": ["jutsu_w01_scroll", "bandage_cosmetic"] },
+          "rare":     { "weight": 8,  "items": ["jutsu_w03_scroll", "jutsu_f03_scroll"] },
+          "legendary":{ "weight": 2,  "items": ["kubikiribocho_fragment"] }
+        }
+      },
+      "hakuren": {
+        "storyHP": 5000,
+        "eventHP": 20000,
+        "baseDefense": 30,
+        "baseAttack": 70,
+        "lootTable": {
+          "common":   { "weight": 60, "items": ["ryo_80", "ice_needle_x10"] },
+          "uncommon": { "weight": 30, "items": ["haku_mask_cosmetic", "bangcham_accessory"] },
+          "rare":     { "weight": 9,  "items": ["jutsu_wi03_scroll"] },
+          "legendary":{ "weight": 1,  "items": ["jutsu_n09_fragment"] }
+        }
+      },
+      "garrek": {
+        "storyHP": 12000,
+        "eventHP": 45000,
+        "baseDefense": 55,
+        "baseAttack": 110,
+        "lootTable": {
+          "common":   { "weight": 55, "items": ["ryo_200", "sand_material"] },
+          "uncommon": { "weight": 30, "items": ["jutsu_e04_scroll", "gaara_gourd_cosmetic"] },
+          "rare":     { "weight": 12, "items": ["jutsu_e03_scroll", "jutsu_f04_scroll"] },
+          "legendary":{ "weight": 3,  "items": ["chunin_exam_finisher_badge"] }
+        }
+      },
+      "sazuki": {
+        "storyHP": 15000,
+        "eventHP": 50000,
+        "baseDefense": 60,
+        "baseAttack": 130,
+        "lootTable": {
+          "common":   { "weight": 50, "items": ["ryo_300", "uchiha_fan_cosmetic"] },
+          "uncommon": { "weight": 30, "items": ["jutsu_l02_scroll", "jutsu_f03_scroll"] },
+          "rare":     { "weight": 15, "items": ["jutsu_l03_scroll", "jutsu_n07_scroll"] },
+          "legendary":{ "weight": 5,  "items": ["cursed_seal_material"] }
+        }
+      },
+      "orokimaru": {
+        "storyHP": 18000,
+        "eventHP": 65000,
+        "baseDefense": 70,
+        "baseAttack": 150,
+        "lootTable": {
+          "common":   { "weight": 45, "items": ["ryo_500", "snake_scale_material"] },
+          "uncommon": { "weight": 30, "items": ["jutsu_l04_scroll", "jutsu_w04_scroll"] },
+          "rare":     { "weight": 18, "items": ["jutsu_n08_scroll"] },
+          "legendary":{ "weight": 7,  "items": ["arc4_boss_badge", "orochimaru_cosmetic_set"] }
+        }
+      }
+    }
+  },
+
+  "reputationSystem": {
+    "factions": {
+      "village": {
+        "thresholds": {
+          "hostile":   { "max": -50, "effect": "NPC tấn công khi gặp, không thể vào Konohara" },
+          "unfriendly":{ "range": [-49, -20], "effect": "NPC lạnh lùng, một số quest bị khóa" },
+          "neutral":   { "range": [-19, 19],  "effect": "Không có effect đặc biệt" },
+          "friendly":  { "range": [20, 49],   "effect": "NPC thân thiện, mở quest phụ" },
+          "honored":   { "min": 50,            "effect": "Mở ANBU quest, discount shop 10%, Chunin có thể được thăng dù thua trận" }
+        }
+      },
+      "reimei": {
+        "thresholds": {
+          "unknown":   { "max": 14,  "effect": "Reimei không biết đến player" },
+          "noticed":   { "range": [15, 29], "effect": "NPC Reimei không tấn công, mở hidden quest" },
+          "respected": { "range": [30, 49], "effect": "Mở Villain branch option, Orokimaru offer" },
+          "member":    { "min": 50,          "effect": "Reimei coi player là đồng minh, mở content Villain ending" }
+        }
+      }
+    },
+    "endingThresholds": {
+      "hero":    { "village": 60,  "note": "Village Rep ≥ 60 tổng 4 arc" },
+      "villain": { "reimei": 50, "note": "Reimei Rep ≥ 50 tổng 4 arc" },
+      "wanderer":{ "note": "Không đủ điều kiện Hero hoặc Villain, hoặc đủ cả hai cùng lúc" }
+    }
+  },
+
+  "economySystem": {
+    "currency": "ryo",
+    "shopPrices": {
+      "tier1JutsuScroll": 500,
+      "tier2JutsuScroll": 1500,
+      "tier3JutsuScroll": 4000,
+      "cosmetic_common": 200,
+      "cosmetic_rare": 1000,
+      "cosmetic_legendary": 5000,
+      "reviveItem": 300
+    },
+    "dropRates": {
+      "normalEnemy": { "ryoMin": 10, "ryoMax": 50 },
+      "eliteEnemy":  { "ryoMin": 50, "ryoMax": 150 },
+      "boss":        { "ryoMin": 100, "ryoMax": 500 }
+    },
+    "monetizationNote": "[CHƯA CHỐT] Chỉ cosmetic hay có thêm gì — chưa quyết định"
+  }
+}

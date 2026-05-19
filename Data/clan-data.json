@@ -1,0 +1,193 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "totalClans": 4,
+    "notes": [
+      "passive: buff luôn luôn active, không cần kích hoạt",
+      "active: kỹ năng đặc biệt, có cooldown dài",
+      "noClan: +1 skill point tự do mỗi level thay vì passive/active cố định",
+      "startingChakraAffinityBonus: clan có xu hướng tự nhiên với hệ chakra nào",
+      "pvpRole: vai trò thiết kế trong faction war",
+      "rarity: xác suất random khi tạo nhân vật (nếu không chọn)"
+    ]
+  },
+  "clans": [
+    {
+      "id": "clan_uchiha",
+      "name": "Uchira",
+      "nameVi": "Tộc Uchira",
+      "lore": "Gia tộc mạnh nhất Konohara — nổi tiếng với Kagami-me và hỏa thuật. Nhiều thành viên có xu hướng tìm kiếm sức mạnh tuyệt đối.",
+      "startingChakraAffinityBonus": "fire",
+      "pvpRole": "Burst DPS — damage cực cao trong thời gian ngắn, đọc được đòn địch",
+      "rarity": "rare",
+      "passive": {
+        "id": "uchiha_passive_sharingan",
+        "name": "Kagami-me: Sao Chép",
+        "nameVi": "Kính Nhãn: Sao Chép",
+        "description": "Khi bị tấn công bằng jutsu, có 20% xác suất ghi nhớ jutsu đó — lần sau dùng jutsu cùng loại damage tăng 10%. Stack tối đa 3 lần, reset khi chết.",
+        "triggerCondition": "onHitByJutsu",
+        "procChance": 0.20,
+        "effect": {
+          "type": "stackBuff",
+          "stat": "jutsuDamage",
+          "bonusPerStack": 0.10,
+          "maxStacks": 3,
+          "resetOnDeath": true
+        }
+      },
+      "active": {
+        "id": "uchiha_active_mangekyou",
+        "name": "Mangekyuu: Obsidian Flame",
+        "nameVi": "Vạn Hoa Kính: Hắc Hỏa Vĩnh Cửu",
+        "description": "Phóng ngọn lửa đen vào 1 mục tiêu — gây 250 damage tức thì (xuyên shield). Lửa đen tiếp tục cháy 30 damage/giây trong 6 giây — nhưng có thể chặn bằng shield hoặc Earth Wall.",
+        "cooldown": 150,
+        "chakraCost": 60,
+        "range": "long",
+        "aoeRadius": 0,
+        "castTime": 1.5,
+        "effects": [
+          { "type": "damage", "amount": 250, "ignoresShield": true },
+          { "type": "burn", "duration": 6, "tickDamage": 30, "ignoresShield": false }
+        ],
+        "pvpUsable": true,
+        "unlockLevel": 20,
+        "nerfNote": "Nerf từ 800 tổng → 430 tổng (250 + 180). Hit đầu vẫn xuyên shield để giữ tính độc đáo của Obsidian Flame, nhưng burn sau đó có thể counter bằng shield — tạo counterplay thay vì guaranteed kill."
+      }
+    },
+
+    {
+      "id": "clan_senju",
+      "name": "Senjura",
+      "nameVi": "Tộc Senjura",
+      "lore": "Gia tộc đối lập với Uchira — nổi tiếng với thể lực vô song và mộc thuật. Tổ tiên của Hokage đầu tiên.",
+      "startingChakraAffinityBonus": "earth",
+      "pvpRole": "Tank/Support — sinh tồn cao, hỗ trợ đồng đội trong faction war",
+      "rarity": "rare",
+      "passive": {
+        "id": "senju_passive_vitality",
+        "name": "Sức Sống Senjura",
+        "nameVi": "Sức Sống Senjura",
+        "description": "HP tối đa tăng 20%. Khi HP xuống dưới 30%, tự động hồi 5% HP tối đa mỗi 5 giây trong 20 giây. Hiệu ứng hồi máu này chỉ kích hoạt 1 lần mỗi trận.",
+        "triggerCondition": "always",
+        "effects": [
+          { "type": "statBonus", "stat": "maxHP", "bonusPercent": 20 },
+          {
+            "type": "conditionalRegen",
+            "triggerHP": 0.30,
+            "regenPercent": 0.05,
+            "regenInterval": 5,
+            "regenDuration": 20,
+            "oncePer": "combat"
+          }
+        ]
+      },
+      "active": {
+        "id": "senju_active_woodwall",
+        "name": "Timber Release: Locking Wall",
+        "nameVi": "Mộc Độn: Tường Gỗ Phong Tỏa",
+        "description": "Dựng tường gỗ khổng lồ bảo vệ bản thân và đồng minh trong vùng 15 studs — chặn tất cả projectile trong 10 giây. Địch trong vùng bị root 2 giây khi tường dựng lên.",
+        "cooldown": 90,
+        "chakraCost": 50,
+        "range": "self",
+        "aoeRadius": 15,
+        "castTime": 1.0,
+        "effects": [
+          { "type": "barrier", "duration": 10, "blocksProjectiles": true, "radius": 15 },
+          { "type": "root", "duration": 2, "targetsEnemy": true, "radius": 15 }
+        ],
+        "pvpUsable": true,
+        "unlockLevel": 20
+      }
+    },
+
+    {
+      "id": "clan_hyuga",
+      "name": "Hyuura",
+      "nameVi": "Tộc Hyuura",
+      "lore": "Gia tộc danh giá nhất Konohara — Hakugan nhìn xuyên vật thể, Gentle Fist nhắm vào hệ chakra của địch.",
+      "startingChakraAffinityBonus": "none",
+      "pvpRole": "Chakra Disruptor — làm tê liệt khả năng dùng jutsu của địch",
+      "rarity": "uncommon",
+      "passive": {
+        "id": "hyuga_passive_byakugan",
+        "name": "Hakugan: Nhãn Thần",
+        "nameVi": "Bạch Nhãn: Nhãn Thần",
+        "description": "Nhìn xuyên Hidden Mist và genjutsu mù — không bị ảnh hưởng bởi mist/blind debuff. Thêm: thấy HP bar và chakra bar của địch trong phạm vi 40 studs.",
+        "triggerCondition": "always",
+        "effects": [
+          { "type": "immunity", "immuneTo": ["mist", "blind", "genjutsuVision"] },
+          { "type": "enemyInfo", "range": 40, "reveals": ["hpBar", "chakraBar"] }
+        ]
+      },
+      "active": {
+        "id": "hyuga_active_gentlefist",
+        "name": "Eight Compass: 64 Strikes",
+        "nameVi": "Bát Quái: Lục Thập Tứ Chưởng",
+        "description": "Tấn công 64 điểm huyệt chakra của 1 mục tiêu — drain 50% chakra hiện tại của địch và đóng băng chakra regen trong 10 giây. Địch không thể dùng jutsu tier 3+ trong thời gian đó.",
+        "cooldown": 100,
+        "chakraCost": 45,
+        "range": "melee",
+        "aoeRadius": 0,
+        "castTime": 1.2,
+        "effects": [
+          { "type": "chakraDrain", "drainPercent": 0.50 },
+          { "type": "chakraRegenBlock", "duration": 10 },
+          { "type": "jutsuBlock", "minTierBlocked": 3, "duration": 10 }
+        ],
+        "pvpUsable": true,
+        "unlockLevel": 20
+      }
+    },
+
+    {
+      "id": "clan_none",
+      "name": "No Clan",
+      "nameVi": "Không Gia Tộc",
+      "lore": "Không có huyết thống đặc biệt — nhưng đó chính là sự tự do. Không bị ràng buộc bởi kỳ vọng của bất kỳ ai.",
+      "startingChakraAffinityBonus": "playerChoice",
+      "pvpRole": "Flexible — build tự do nhất, phụ thuộc hoàn toàn vào jutsu loadout",
+      "rarity": "common",
+      "passive": {
+        "id": "noclan_passive_freepoint",
+        "name": "Tiềm Năng Tự Do",
+        "nameVi": "Tiềm Năng Tự Do",
+        "description": "+1 Skill Point tự do mỗi level (cộng dồn với SP thông thường). SP tự do có thể dùng để học bất kỳ jutsu nào không giới hạn bởi Chakra Affinity — nhưng damage không nhận bonus affinity.",
+        "triggerCondition": "onLevelUp",
+        "effects": [
+          { "type": "bonusSP", "amount": 1, "perLevel": true },
+          { "type": "affinityBypass", "description": "Dùng SP tự do để học jutsu ngoài affinity với cost bình thường, không nhận affinityDamageBonus" }
+        ]
+      },
+      "active": {
+        "id": "noclan_active_adapt",
+        "name": "Thích Nghi",
+        "nameVi": "Thích Nghi",
+        "description": "Phân tích 1 địch thủ trong 3 giây — trong 30 giây tiếp theo, giảm 20% damage nhận từ clan ability của địch đó, và tăng 15% damage gây ra cho địch đó.",
+        "cooldown": 60,
+        "chakraCost": 20,
+        "range": "medium",
+        "aoeRadius": 0,
+        "castTime": 0,
+        "effects": [
+          { "type": "analyze", "duration": 3 },
+          {
+            "type": "targetDebuff",
+            "duration": 30,
+            "damageReductionFromTarget": 0.20,
+            "damageBoostToTarget": 0.15
+          }
+        ],
+        "pvpUsable": true,
+        "unlockLevel": 15,
+        "designNote": "Active này đặc biệt mạnh trong 1v1 PvP — counter trực tiếp clan ability của đối thủ"
+      }
+    }
+  ],
+
+  "balanceNotes": {
+    "chưaChốt": "Số lượng clan có thể tăng thêm trong tương lai — hiện tại 4 clan là đủ cho launch",
+    "uchihaVsSenjura": "Hai clan này thiết kế để counter nhau — Obsidian Flame xuyên shield của Senjura, nhưng Wood Wall chặn projectile nên Uchira phải vào melee để dùng active",
+    "hyugaInPvP": "Hyuura có thể bị coi là overpowered trong PvP nếu chakra drain quá mạnh — cần monitor sau khi có combat system",
+    "noClanViability": "+1 SP/level tích lũy thành lợi thế lớn ở late game (level 50 = +50 SP thêm) — cần cap hoặc diminishing returns"
+  }
+}

@@ -1,0 +1,127 @@
+# Naruko Roblox Game — Ý Tưởng & Vision
+
+## Game Là Gì
+
+Game Roblox nhập vai thế giới Naruko. Người chơi **không chơi Naruko hay Sazuki** — họ tạo nhân vật riêng và sống trong thế giới đó. Các nhân vật canon (Naruko, Sazuki, Kakashi, Orokimaru,...) tồn tại như NPC và ảnh hưởng đến cốt truyện.
+
+Toàn bộ cốt truyện **Naruko hồi nhỏ (Original Series)** được tái hiện lại, nhưng nhân vật người chơi có thể chọn:
+- **Bảo vệ làng** → con đường anh hùng
+- **Phản bội làng** → gia nhập Reimei, trở thành phản diện
+
+---
+
+## Những Thứ Cốt Lõi
+
+### Nhân Vật Tự Tạo
+- Chọn tên, gia tộc, Chakra chính
+- Gia tộc ảnh hưởng passive và 1 kỹ năng đặc biệt
+- Không bị ép theo một build cụ thể
+
+### Hệ Thống Nhẫn Thuật
+- Học tự do nhưng **tối đa 6 jutsu** cùng lúc
+- Muốn học jutsu mới → phải quên jutsu cũ
+- Jutsu chia 5 tầng: càng mạnh càng khó học, càng tốn SP
+- Học theo Chakra Affinity: jutsu đúng hệ học rẻ hơn, mạnh hơn
+
+### Hệ Chakra (5 loại)
+Lửa / Nước / Đất / Gió / Sét — mỗi loại có lợi thế riêng.
+Người chơi bắt đầu với 1 hệ, mở thêm bằng **hidden quest** (không mua được).
+
+### Gia Tộc & Huyết Kế Giới Hạn
+- Uchira, Senjura, Hyuura, hoặc không clan
+- Mỗi clan có 1 passive (buff nhỏ) + 1 active ability (cooldown dài)
+- Không clan → +1 skill point tự do mỗi level
+
+### Hệ Danh Tiếng (Reputation)
+- Mỗi hành động cộng/trừ điểm với 2 phe: **Làng** và **Reimei**
+- Điểm rep ảnh hưởng NPC phản ứng thế nào, quest nào mở ra
+- Dẫn đến 3 kết thúc: Hero / Villain / Wanderer
+
+---
+
+## Cốt Truyện — 4 Arc Chính (Original Series)
+
+### Arc 1: Tide Province (Level 1–15)
+Nhiệm vụ đầu tiên cùng Team 7, gặp Zaborax và Hakuren.
+Lựa chọn đầu tiên: bảo vệ dân làng khi bị tấn công hay bỏ chạy.
+
+### Arc 2: Chunin Exam (Level 15–30)
+Thi Chunin qua 3 giai đoạn: bài thi viết → rừng chết → đấu đài.
+Gặp Garrek, Orokimaru xuất hiện. Làng bị tấn công — chọn ưu tiên ai.
+
+### Arc 3: Sazuki Rời Làng (Level 28–40)
+Sazuki bị Orokimaru dụ dỗ, bỏ trốn.
+Đuổi theo, thâm nhập Echo Stronghold, đối mặt Sound Four.
+Lựa chọn: thuyết phục Sazuki quay về hay để hắn đi.
+
+### Arc 4: Tìm Tsukade (Level 40–50)
+Cùng Jiruha và Naruko tìm Tsukade — Sanin huyền thoại.
+Orokimaru phục kích trên đường về. Kết thúc Original Series.
+
+---
+
+## Định Hướng Gameplay (Đã Chốt)
+
+Game hướng đến mô hình **multiplayer competitive** tương tự Blox Fruits nhưng có chiều sâu hơn — story arc làm progression gate, PvP có faction context, grind có mục tiêu rõ ràng.
+
+### Map — Hub & Spoke
+Konohara là trung tâm, 4 zone tỏa ra các hướng:
+```
+              Tide Province (Arc 1, Lv 1–15)
+                      |
+Dune Village ──── KONOHA ──── Echo Stronghold (Arc 3, Lv 28–40)
+                      |
+               Chunin Zone (Arc 2, Lv 15–30)
+                      |
+              Tsukade Region (Arc 4, Lv 40–50)
+```
+- Player cấp cao vẫn có lý do quay lại zone thấp (boss event, faction territory, material farming)
+- Konohara là safe zone và social hub
+
+### PvP — Faction War Territory
+- 2 faction: **Làng (Village)** vs **Reimei**
+- Mỗi zone có "control meter" — faction farm boss/NPC nhiều hơn trong tuần thì control zone đó
+- Zone bị control: faction địch bị debuff nhỏ khi vào
+- Contested zone: drop rate +20%, PvP bật full
+- Reset hàng tuần — faction thắng nhận reward (jutsu material, cosmetic, rep bonus)
+- Cùng faction **không thể** đánh nhau
+
+### PvP Level Gap — Cứng 15 Level
+- Chênh lệch > 15 level → không thể gây damage cho nhau
+- Áp dụng **tuyệt đối** — không ngoại lệ kể cả trong event
+- Lý do: tránh snowball, bảo vệ người mới, không tạo ra "người mạnh càng mạnh"
+
+### Event System — 2 Lớp Thắng/Thua
+Boss event (Zaborax, Garrek, Orokimaru...) spawn theo lịch cố định, toàn server tham gia:
+
+**Lớp 1 — Faction thắng territory:**
+Tổng damage Village vs tổng damage Reimei → faction cao hơn kiểm soát zone
+
+**Lớp 2 — Cá nhân nhận reward:**
+Tính % contribution trong **level bracket** của mình, không phải damage tuyệt đối
+- Bracket ví dụ: 1–15 / 15–25 / 25–35 / 35–50
+- Top contributor trong bracket → reward tier cao, dù damage thấp hơn player cấp cao
+
+**Objective phụ trong event:**
+Bảo vệ NPC, phá shield boss, dẫn dụ mob — không cần level cao, cần phối hợp
+Hoàn thành objective cộng vào cả faction score lẫn cá nhân reward
+
+---
+
+## Những Thứ Chưa Chốt
+
+- **Gia tộc balance**: Chưa quyết định số lượng clan, có nên thêm clan nhỏ không
+- **Monetization**: Chỉ cosmetic hay có gì khác
+- **Shippuden**: Sẽ brainstorm sau khi xong Original
+- **Ranked Arena**: Có thêm 1v1 ranked riêng ngoài open-world PvP không
+- **Bracket level cụ thể**: Con số bracket event cần test và điều chỉnh sau
+
+---
+
+## Mục Tiêu Khi Làm Việc Với File Này
+
+Khi nhận yêu cầu liên quan đến game này:
+- Dựa trên những gì đã có ở trên làm nền
+- Không mâu thuẫn với design đã chốt
+- Những thứ "chưa chốt" → đề xuất hướng, không tự quyết
+- Shippuden chưa brainstorm → chưa đề cập
