@@ -189,7 +189,7 @@
         "lootTable": {
           "common":   { "weight": 60, "items": ["ryo_100", "antidote", "kunai_x5"] },
           "uncommon": { "weight": 30, "items": ["jutsu_w01_scroll", "bandage_cosmetic"] },
-          "rare":     { "weight": 8,  "items": ["jutsu_w03_scroll", "jutsu_f03_scroll"] },
+          "rare":     { "weight": 8,  "items": ["jutsu_f03_scroll"] },
           "legendary":{ "weight": 2,  "items": ["kubikiribocho_fragment"] }
         }
       },
@@ -201,8 +201,8 @@
         "lootTable": {
           "common":   { "weight": 60, "items": ["ryo_80", "ice_needle_x10"] },
           "uncommon": { "weight": 30, "items": ["hakuren_mask_cosmetic", "bangcham_accessory"] },
-          "rare":     { "weight": 9,  "items": ["jutsu_wi03_scroll"] },
-          "legendary":{ "weight": 1,  "items": ["jutsu_n09_fragment"] }
+          "rare":     { "weight": 9,  "items": ["jutsu_wi02_scroll"] },
+          "legendary":{ "weight": 1,  "items": ["hakuren_ice_blade_cosmetic"] }
         }
       },
       "garrek": {
