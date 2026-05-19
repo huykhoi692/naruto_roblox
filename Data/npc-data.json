@@ -189,7 +189,7 @@
     },
 
     {
-      "id": "npc_inari",
+      "id": "npc_inaro",
       "name": "Inaro",
       "type": "canon",
       "faction": "neutral",
@@ -212,7 +212,7 @@
     },
 
     {
-      "id": "npc_vendor_konoha_weapons",
+      "id": "npc_vendor_konohara_weapons",
       "name": "Tenmei — Cửa Hàng Vũ Khí Konohara",
       "type": "vendor",
       "faction": "village",
@@ -235,7 +235,7 @@
     },
 
     {
-      "id": "npc_vendor_konoha_jutsu_tier1",
+      "id": "npc_vendor_konohara_jutsu_tier1",
       "name": "Mizuki — Cửa Hàng Jutsu Scroll (Tier 1-2)",
       "type": "vendor",
       "faction": "village",
@@ -262,9 +262,7 @@
           { "id": "jutsu_f03",  "price": 1500 },
           { "id": "jutsu_w02",  "price": 1500 },
           { "id": "jutsu_n01",  "price": 1500 }
-        ],
-        "lockedInV01": ["jutsu_l02", "jutsu_n06"],
-        "lockedNote": "jutsu_l02 source Arc 3 only, jutsu_n06 source Arc 2 only — sẽ thêm lại khi unlock Arc tương ứng"
+        ]
       }
     },
 
