@@ -188,6 +188,6 @@
     "chưaChốt": "Số lượng clan có thể tăng thêm trong tương lai — hiện tại 4 clan là đủ cho launch",
     "uchihaVsSenjura": "Hai clan này thiết kế để counter nhau — Obsidian Flame xuyên shield của Senjura, nhưng Wood Wall chặn projectile nên Uchira phải vào melee để dùng active",
     "hyugaInPvP": "Hyuura có thể bị coi là overpowered trong PvP nếu chakra drain quá mạnh — cần monitor sau khi có combat system",
-    "noClanViability": "+1 SP/level tích lũy thành lợi thế lớn ở late game (level 50 = +50 SP thêm) — cần cap hoặc diminishing returns"
+    "noClanViability": "No Clan nhận +1 SP/level đến level 30, sau đó dừng bonus (noClanBonusSPCap = 30 trong balance-config) để tránh late-game gap. Tổng bonus tối đa: +30 SP."
   }
 }

@@ -1,493 +1,384 @@
 {
   "version": "0.1",
   "lastUpdated": "2026-05-19",
-  "note": "Định nghĩa tất cả item non-jutsu trong game. Jutsu riêng trong jutsu-definitions.json. Scroll/fragment có jutsuRef link về jutsu-definitions.",
+  "note": "Định nghĩa tất cả item non-jutsu trong game. Jutsu riêng trong jutsu-definitions.json. Scroll/fragment có jutsuRef link về jutsu-definitions. Shop và lootTable đều dùng itemId từ file này.",
   "items": [
-    {
-      "id": "ryo_small",
-      "name": "Ryo (Small)",
-      "nameVi": "Ryo Nhỏ",
-      "type": "currency",
-      "rarity": "common",
-      "amount": 20,
-      "stackable": true,
-      "description": "Tiền thưởng nhỏ — drop từ enemy cấp thấp Arc 1"
-    },
-    {
-      "id": "ryo_medium",
-      "name": "Ryo (Medium)",
-      "nameVi": "Ryo Vừa",
-      "type": "currency",
-      "rarity": "common",
-      "amount": 50,
-      "stackable": true,
-      "description": "Tiền thưởng vừa — drop từ enemy Arc 3"
-    },
-    {
-      "id": "ryo_80",
-      "name": "Ryo (80)",
-      "nameVi": "80 Ryo",
-      "type": "currency",
-      "rarity": "common",
-      "amount": 80,
-      "stackable": true,
-      "description": "Drop từ boss Hakuren (common)"
-    },
-    {
-      "id": "ryo_100",
-      "name": "Ryo (100)",
-      "nameVi": "100 Ryo",
-      "type": "currency",
-      "rarity": "common",
-      "amount": 100,
-      "stackable": true,
-      "description": "Drop từ boss Zaborax (common)"
-    },
-    {
-      "id": "ryo_200",
-      "name": "Ryo (200)",
-      "nameVi": "200 Ryo",
-      "type": "currency",
-      "rarity": "common",
-      "amount": 200,
-      "stackable": true,
-      "description": "Drop từ boss Garrek (common)"
-    },
-    {
-      "id": "ryo_300",
-      "name": "Ryo (300)",
-      "nameVi": "300 Ryo",
-      "type": "currency",
-      "rarity": "common",
-      "amount": 300,
-      "stackable": true,
-      "description": "Drop từ boss Arc 3 (common)"
-    },
-    {
-      "id": "ryo_500",
-      "name": "Ryo (500)",
-      "nameVi": "500 Ryo",
-      "type": "currency",
-      "rarity": "common",
-      "amount": 500,
-      "stackable": true,
-      "description": "Drop từ boss Arc 4 (common)"
-    },
+
+    { "id": "ryo_small",  "name": "Ryo (Small)",  "nameVi": "Ryo Nhỏ",   "type": "currency", "rarity": "common", "amount": 20,  "stackable": true, "description": "Tiền thưởng nhỏ — drop từ enemy cấp thấp Arc 1" },
+    { "id": "ryo_medium", "name": "Ryo (Medium)", "nameVi": "Ryo Vừa",   "type": "currency", "rarity": "common", "amount": 50,  "stackable": true, "description": "Tiền thưởng vừa — drop từ enemy Arc 3" },
+    { "id": "ryo_80",     "name": "Ryo (80)",     "nameVi": "80 Ryo",    "type": "currency", "rarity": "common", "amount": 80,  "stackable": true, "description": "Drop từ boss Hakuren (common)" },
+    { "id": "ryo_100",    "name": "Ryo (100)",    "nameVi": "100 Ryo",   "type": "currency", "rarity": "common", "amount": 100, "stackable": true, "description": "Drop từ boss Zaborax (common)" },
+    { "id": "ryo_200",    "name": "Ryo (200)",    "nameVi": "200 Ryo",   "type": "currency", "rarity": "common", "amount": 200, "stackable": true, "description": "Drop từ boss Garrek (common)" },
+    { "id": "ryo_300",    "name": "Ryo (300)",    "nameVi": "300 Ryo",   "type": "currency", "rarity": "common", "amount": 300, "stackable": true, "description": "Drop từ boss Arc 3 (common)" },
+    { "id": "ryo_500",    "name": "Ryo (500)",    "nameVi": "500 Ryo",   "type": "currency", "rarity": "common", "amount": 500, "stackable": true, "description": "Drop từ boss Arc 4 (common)" },
+
     {
       "id": "kunai",
-      "name": "Kunai",
-      "nameVi": "Phi Tiêu Kunai",
-      "type": "tool",
-      "rarity": "common",
-      "shopPrice": 10,
-      "stackable": true,
-      "maxStack": 99,
+      "name": "Kunai", "nameVi": "Phi Tiêu Kunai",
+      "type": "tool", "rarity": "common",
+      "shopPrice": 10, "shopId": "npc_vendor_konohara_weapons",
+      "stackable": true, "maxStack": 99,
       "description": "Vũ khí ném cơ bản — sát thương thấp, tốc độ cao"
     },
     {
       "id": "kunai_x5",
-      "name": "Kunai x5",
-      "nameVi": "Gói Kunai x5",
-      "type": "tool",
-      "rarity": "common",
-      "stackable": false,
-      "bundleOf": "kunai",
-      "bundleCount": 5,
+      "name": "Kunai x5", "nameVi": "Gói Kunai x5",
+      "type": "tool", "rarity": "common",
+      "stackable": false, "bundleOf": "kunai", "bundleCount": 5,
       "description": "Gói 5 kunai — drop từ boss Zaborax (common)"
     },
     {
       "id": "shuriken",
-      "name": "Shuriken",
-      "nameVi": "Phi Tiêu Shuriken",
-      "type": "tool",
-      "rarity": "common",
-      "shopPrice": 5,
-      "stackable": true,
-      "maxStack": 99,
-      "description": "Vũ khí ném cơ bản — rẻ hơn kunai, sát thương thấp hơn"
+      "name": "Shuriken", "nameVi": "Phi Tiêu Shuriken",
+      "type": "tool", "rarity": "common",
+      "shopPrice": 5, "shopId": "npc_vendor_konohara_weapons",
+      "stackable": true, "maxStack": 99,
+      "description": "Vũ khí ném rẻ — sát thương thấp hơn kunai"
     },
     {
       "id": "shuriken_x5",
-      "name": "Shuriken x5",
-      "nameVi": "Gói Shuriken x5",
-      "type": "tool",
-      "rarity": "common",
-      "stackable": false,
-      "bundleOf": "shuriken",
-      "bundleCount": 5,
+      "name": "Shuriken x5", "nameVi": "Gói Shuriken x5",
+      "type": "tool", "rarity": "common",
+      "stackable": false, "bundleOf": "shuriken", "bundleCount": 5,
       "description": "Gói 5 shuriken — drop từ enemy Arc 1"
     },
     {
       "id": "senbon",
-      "name": "Senbon",
-      "nameVi": "Kim Châm Senbon",
-      "type": "tool",
-      "rarity": "common",
-      "shopPrice": 8,
-      "stackable": true,
-      "maxStack": 99,
+      "name": "Senbon", "nameVi": "Kim Châm Senbon",
+      "type": "tool", "rarity": "common",
+      "shopPrice": 8, "shopId": "npc_vendor_konohara_weapons",
+      "stackable": true, "maxStack": 99,
       "description": "Kim nhỏ độ chính xác cao — dùng tẩm độc hoặc slow"
     },
     {
       "id": "explosive_tag",
-      "name": "Explosive Tag",
-      "nameVi": "Bùa Nổ",
-      "type": "tool",
-      "rarity": "uncommon",
-      "shopPrice": 50,
-      "stackable": true,
-      "maxStack": 20,
+      "name": "Explosive Tag", "nameVi": "Bùa Nổ",
+      "type": "tool", "rarity": "uncommon",
+      "shopPrice": 50, "shopId": "npc_vendor_konohara_weapons",
+      "stackable": true, "maxStack": 20,
       "description": "Gắn vào vật thể hoặc ném — nổ sau 2 giây, AoE damage"
     },
     {
-      "id": "ice_needle_x10",
-      "name": "Ice Needle x10",
-      "nameVi": "Gói Kim Băng x10",
-      "type": "tool",
-      "rarity": "common",
-      "stackable": false,
-      "bundleOf": "ice_needle",
-      "bundleCount": 10,
-      "description": "Kim băng do Hakuren tạo ra — drop từ boss Hakuren (common). Gây slow 1 giây."
+      "id": "ice_needle",
+      "name": "Ice Needle", "nameVi": "Kim Băng",
+      "type": "tool", "rarity": "common",
+      "stackable": true, "maxStack": 99,
+      "description": "Kim băng do kỹ thuật của Hakuren tạo ra — gây slow 1 giây. Không bán ở shop, chỉ drop từ boss Hakuren."
     },
     {
+      "id": "ice_needle_x10",
+      "name": "Ice Needle x10", "nameVi": "Gói Kim Băng x10",
+      "type": "tool", "rarity": "common",
+      "stackable": false, "bundleOf": "ice_needle", "bundleCount": 10,
+      "description": "Gói 10 kim băng — drop từ boss Hakuren (common)"
+    },
+
+    {
       "id": "antidote",
-      "name": "Antidote",
-      "nameVi": "Thuốc Giải Độc",
-      "type": "consumable",
-      "rarity": "common",
-      "stackable": true,
-      "maxStack": 10,
+      "name": "Antidote", "nameVi": "Thuốc Giải Độc",
+      "type": "consumable", "rarity": "common",
+      "stackable": true, "maxStack": 10,
       "effect": "cure_poison",
       "description": "Giải trạng thái poison ngay lập tức. Dùng được cả khi đang chiến đấu."
     },
+
     {
       "id": "sand_material",
-      "name": "Sand Crystal",
-      "nameVi": "Tinh Thể Cát",
-      "type": "material",
-      "rarity": "common",
-      "arc": 2,
-      "stackable": true,
-      "maxStack": 50,
+      "name": "Sand Crystal", "nameVi": "Tinh Thể Cát",
+      "type": "material", "rarity": "common", "arc": 2,
+      "stackable": true, "maxStack": 50,
       "description": "Tinh thể cát từ vùng Chunin Exam — nguyên liệu craft/quest Arc 2"
     },
     {
       "id": "snake_scale_material",
-      "name": "Snake Scale",
-      "nameVi": "Vảy Rắn",
-      "type": "material",
-      "rarity": "uncommon",
-      "arc": 4,
-      "stackable": true,
-      "maxStack": 30,
+      "name": "Snake Scale", "nameVi": "Vảy Rắn",
+      "type": "material", "rarity": "uncommon", "arc": 4,
+      "stackable": true, "maxStack": 30,
       "description": "Vảy rắn từ tay sai Orochimaru — nguyên liệu craft Arc 4"
     },
     {
       "id": "sound_material",
-      "name": "Sound Crystal",
-      "nameVi": "Tinh Thể Âm",
-      "type": "material",
-      "rarity": "uncommon",
-      "arc": 3,
-      "stackable": true,
-      "maxStack": 30,
+      "name": "Sound Crystal", "nameVi": "Tinh Thể Âm",
+      "type": "material", "rarity": "uncommon", "arc": 3,
+      "stackable": true, "maxStack": 30,
       "description": "Tinh thể dao động âm từ lính Echo Stronghold — nguyên liệu craft Arc 3"
     },
     {
       "id": "cursed_seal_material",
-      "name": "Cursed Seal Fragment",
-      "nameVi": "Mảnh Ấn Nguyền",
-      "type": "material",
-      "rarity": "legendary",
-      "arc": 3,
+      "name": "Cursed Seal Fragment", "nameVi": "Mảnh Ấn Nguyền",
+      "type": "material", "rarity": "legendary", "arc": 3,
       "stackable": false,
-      "description": "Mảnh ấn nguyền rơi từ boss Arc 3 — dùng để mở hidden quest Cursed Path. Chỉ giữ 1 trong inventory."
+      "description": "Mảnh ấn nguyền rơi từ boss Arc 3 — mở hidden quest Cursed Path. Chỉ giữ 1 trong inventory."
     },
+
     {
       "id": "bandage_cosmetic",
-      "name": "Battle Bandage Wrap",
-      "nameVi": "Băng Quấn Chiến Đấu",
-      "type": "cosmetic",
-      "rarity": "uncommon",
-      "arc": 1,
-      "equipSlot": "arms",
-      "stackable": false,
+      "name": "Battle Bandage Wrap", "nameVi": "Băng Quấn Chiến Đấu",
+      "type": "cosmetic", "rarity": "uncommon", "arc": 1,
+      "equipSlot": "arms", "stackable": false,
       "description": "Băng y tế quấn tay — cosmetic drop từ boss Zaborax. Không có stat."
     },
     {
       "id": "hakuren_mask_cosmetic",
-      "name": "Hakuren's Mask",
-      "nameVi": "Mặt Nạ Hakuren",
-      "type": "cosmetic",
-      "rarity": "uncommon",
-      "arc": 1,
-      "equipSlot": "face",
-      "stackable": false,
+      "name": "Hakuren's Mask", "nameVi": "Mặt Nạ Hakuren",
+      "type": "cosmetic", "rarity": "uncommon", "arc": 1,
+      "equipSlot": "face", "stackable": false,
       "description": "Mặt nạ băng giá của Hakuren — cosmetic drop từ boss Hakuren. Không có stat."
     },
     {
       "id": "bangcham_accessory",
-      "name": "Wave Guard Bracer",
-      "nameVi": "Hộ Thủ Thủy Triều",
-      "type": "cosmetic",
-      "rarity": "uncommon",
-      "arc": 1,
-      "equipSlot": "wrist",
-      "stackable": false,
+      "name": "Wave Guard Bracer", "nameVi": "Hộ Thủ Thủy Triều",
+      "type": "cosmetic", "rarity": "uncommon", "arc": 1,
+      "equipSlot": "wrist", "stackable": false,
       "description": "Hộ thủ của lính vùng Tide Province — cosmetic drop từ boss Hakuren. Không có stat."
     },
     {
       "id": "hakuren_ice_blade_cosmetic",
-      "name": "Hakuren's Ice Blade",
-      "nameVi": "Kiếm Băng Hakuren",
-      "type": "cosmetic",
-      "rarity": "legendary",
-      "arc": 1,
-      "equipSlot": "weapon_skin",
-      "stackable": false,
-      "description": "Vũ khí băng đặc trưng của Hakuren — legendary cosmetic drop, chỉ override skin vũ khí, không tăng stat."
+      "name": "Hakuren's Ice Blade", "nameVi": "Kiếm Băng Hakuren",
+      "type": "cosmetic", "rarity": "legendary", "arc": 1,
+      "equipSlot": "weapon_skin", "stackable": false,
+      "description": "Vũ khí băng đặc trưng của Hakuren — legendary cosmetic, chỉ override skin vũ khí, không tăng stat."
     },
     {
       "id": "garrek_gourd_cosmetic",
-      "name": "Garrek's Sand Gourd",
-      "nameVi": "Bình Cát Garrek",
-      "type": "cosmetic",
-      "rarity": "uncommon",
-      "arc": 2,
-      "equipSlot": "back",
-      "stackable": false,
+      "name": "Garrek's Sand Gourd", "nameVi": "Bình Cát Garrek",
+      "type": "cosmetic", "rarity": "uncommon", "arc": 2,
+      "equipSlot": "back", "stackable": false,
       "description": "Bình cát đặc trưng của Garrek — cosmetic drop từ boss Arc 2. Không có stat."
     },
     {
       "id": "uchira_fan_cosmetic",
-      "name": "Uchiha War Fan",
-      "nameVi": "Quạt Chiến Uchiha",
-      "type": "cosmetic",
-      "rarity": "common",
-      "arc": 3,
-      "equipSlot": "back",
-      "stackable": false,
+      "name": "Uchiha War Fan", "nameVi": "Quạt Chiến Uchiha",
+      "type": "cosmetic", "rarity": "common", "arc": 3,
+      "equipSlot": "back", "stackable": false,
       "description": "Quạt chiến biểu tượng Uchiha — cosmetic drop từ boss Arc 3 (common)."
     },
     {
       "id": "reimei_cloak_cosmetic",
-      "name": "Reimei Operative Cloak",
-      "nameVi": "Áo Choàng Đặc Vụ Reimei",
-      "type": "cosmetic",
-      "rarity": "rare",
-      "shopPrice": 2000,
-      "shopId": "npc_vendor_reimei_broker",
-      "equipSlot": "back",
-      "stackable": false,
+      "name": "Reimei Operative Cloak", "nameVi": "Áo Choàng Đặc Vụ Reimei",
+      "type": "cosmetic", "rarity": "rare",
+      "shopPrice": 2000, "shopId": "npc_vendor_reimei_broker",
+      "equipSlot": "back", "stackable": false,
       "description": "Áo choàng của Reimei — chỉ mua được từ môi giới bí ẩn khi reimei rep >= 15."
     },
     {
       "id": "reimei_ring_cosmetic",
-      "name": "Reimei Signet Ring",
-      "nameVi": "Nhẫn Ấn Reimei",
-      "type": "cosmetic",
-      "rarity": "legendary",
-      "shopPrice": 3000,
-      "shopId": "npc_vendor_reimei_broker",
-      "equipSlot": "hands",
-      "stackable": false,
+      "name": "Reimei Signet Ring", "nameVi": "Nhẫn Ấn Reimei",
+      "type": "cosmetic", "rarity": "legendary",
+      "shopPrice": 3000, "shopId": "npc_vendor_reimei_broker",
+      "equipSlot": "hands", "stackable": false,
       "description": "Nhẫn ấn tín của Reimei — chỉ mua được từ môi giới bí ẩn khi reimei rep >= 15."
     },
     {
       "id": "orokimaru_cosmetic_set",
-      "name": "Orochimaru Outfit Set",
-      "nameVi": "Bộ Trang Phục Orochimaru",
-      "type": "cosmetic",
-      "rarity": "legendary",
-      "arc": 4,
-      "equipSlot": "full_outfit",
-      "stackable": false,
+      "name": "Orochimaru Outfit Set", "nameVi": "Bộ Trang Phục Orochimaru",
+      "type": "cosmetic", "rarity": "legendary", "arc": 4,
+      "equipSlot": "full_outfit", "stackable": false,
       "description": "Bộ trang phục rắn — legendary drop từ boss Arc 4. Bao gồm áo, belt, skin mặt."
     },
     {
-      "id": "chunin_exam_finisher_badge",
-      "name": "Chunin Exam Finisher",
-      "nameVi": "Huy Hiệu Kết Thúc Chunin",
-      "type": "badge",
-      "rarity": "legendary",
-      "arc": 2,
+      "id": "kubikiribocho_weapon_skin",
+      "name": "Kubikiribocho", "nameVi": "Đại Đao Kubikiribocho",
+      "type": "cosmetic", "rarity": "legendary", "arc": 1,
+      "equipSlot": "weapon_skin", "stackable": false,
+      "craftedFrom": "kubikiribocho_fragment", "craftCount": 3,
+      "description": "Skin vũ khí Kubikiribocho — ghép từ 3 mảnh fragment drop boss Zaborax. Chưa implement craft UI trong v0.1."
+    },
+
+    {
+      "id": "hokage_testament",
+      "name": "Hokage's Testament", "nameVi": "Di Thư Hokage Đệ Tam",
+      "type": "quest_item", "rarity": "legendary", "arc": 4,
       "stackable": false,
-      "displayOn": "profile",
+      "condition": "quest_q210_choice_C",
+      "description": "Di thư Hokage Đệ Tam — tăng Village Rep +10 và unlock 1 hidden quest Arc 4. Nhận qua q210 choice C."
+    },
+    {
+      "id": "chunin_exam_finisher_badge",
+      "name": "Chunin Exam Finisher", "nameVi": "Huy Hiệu Kết Thúc Chunin",
+      "type": "badge", "rarity": "legendary", "arc": 2,
+      "stackable": false, "displayOn": "profile",
       "description": "Huy hiệu dành cho người hoàn thành boss cuối Kỳ Thi Chunin."
     },
     {
       "id": "arc4_boss_badge",
-      "name": "Tsunade Arc Conqueror",
-      "nameVi": "Huy Hiệu Chinh Phục Arc Tsunade",
-      "type": "badge",
-      "rarity": "legendary",
-      "arc": 4,
-      "stackable": false,
-      "displayOn": "profile",
+      "name": "Tsunade Arc Conqueror", "nameVi": "Huy Hiệu Chinh Phục Arc Tsunade",
+      "type": "badge", "rarity": "legendary", "arc": 4,
+      "stackable": false, "displayOn": "profile",
       "description": "Huy hiệu hoàn thành boss cuối Arc 4."
     },
+
     {
       "id": "kubikiribocho_fragment",
-      "name": "Kubikiribocho Fragment",
-      "nameVi": "Mảnh Đại Đao Kubikiribocho",
-      "type": "fragment",
-      "rarity": "legendary",
-      "arc": 1,
-      "stackable": true,
-      "maxStack": 3,
-      "combineCount": 3,
-      "combineResult": "kubikiribocho_weapon_skin",
-      "combineNote": "Gom đủ 3 mảnh → craft thành weapon skin Kubikiribocho. Chưa implement v0.1.",
-      "description": "Mảnh của đại đao Kubikiribocho — legendary drop từ boss Zaborax."
+      "name": "Kubikiribocho Fragment", "nameVi": "Mảnh Đại Đao Kubikiribocho",
+      "type": "fragment", "rarity": "legendary", "arc": 1,
+      "stackable": true, "maxStack": 3,
+      "combineCount": 3, "combineResult": "kubikiribocho_weapon_skin",
+      "description": "Mảnh của đại đao Kubikiribocho — legendary drop từ boss Zaborax. Gom đủ 3 → craft weapon skin."
     },
     {
       "id": "jutsu_f01_fragment",
-      "name": "Fireball Jutsu Fragment",
-      "nameVi": "Mảnh Scroll Cầu Lửa",
-      "type": "fragment",
-      "rarity": "rare",
-      "arc": 1,
-      "stackable": true,
-      "maxStack": 3,
-      "combineCount": 3,
-      "combineResult": "jutsu_f01_scroll",
-      "jutsuRef": "jutsu_f01",
-      "description": "Mảnh scroll Fireball Jutsu — drop từ enemy wave_bandit Arc 1. Gom đủ 3 → trao jutsu_f01."
+      "name": "Fireball Jutsu Fragment", "nameVi": "Mảnh Scroll Cầu Lửa",
+      "type": "fragment", "rarity": "rare", "arc": 1,
+      "stackable": true, "maxStack": 3,
+      "combineCount": 3, "combineResult": "jutsu_f01_scroll", "jutsuRef": "jutsu_f01",
+      "description": "Mảnh scroll Fireball Jutsu — drop từ enemy wave_bandit Arc 1. Gom đủ 3 → trao jutsu_f01_scroll."
     },
     {
       "id": "jutsu_wi02_fragment",
-      "name": "Vacuum Sphere Fragment",
-      "nameVi": "Mảnh Scroll Chân Không Cầu",
-      "type": "fragment",
-      "rarity": "uncommon",
-      "arc": 3,
-      "stackable": true,
-      "maxStack": 3,
-      "combineCount": 3,
-      "combineResult": "jutsu_wi02_scroll",
-      "jutsuRef": "jutsu_wi02",
-      "description": "Mảnh scroll Vacuum Sphere — drop từ enemy sound_grunt Arc 3. Gom đủ 3 → trao jutsu_wi02."
+      "name": "Vacuum Sphere Fragment", "nameVi": "Mảnh Scroll Chân Không Cầu",
+      "type": "fragment", "rarity": "uncommon", "arc": 3,
+      "stackable": true, "maxStack": 3,
+      "combineCount": 3, "combineResult": "jutsu_wi02_scroll", "jutsuRef": "jutsu_wi02",
+      "description": "Mảnh scroll Vacuum Sphere — drop từ enemy sound_grunt Arc 3. Gom đủ 3 → trao jutsu_wi02_scroll."
+    },
+
+    {
+      "id": "jutsu_f01_scroll",
+      "name": "Scroll: Fireball Jutsu", "nameVi": "Scroll: Nhẫn Thuật Quả Cầu Lửa",
+      "type": "scroll", "rarity": "common", "jutsuRef": "jutsu_f01",
+      "stackable": false,
+      "description": "Học Fireball Jutsu (Lửa, Tier 1). Bán tại shop Konohara (500 ryo). Cũng drop từ enemy Arc 1 và quest q103."
     },
     {
-      "id": "jutsu_w01_scroll",
-      "name": "Scroll: Water Whip",
-      "nameVi": "Scroll: Roi Nước",
-      "type": "scroll",
-      "rarity": "uncommon",
-      "jutsuRef": "jutsu_w01",
+      "id": "jutsu_f02_scroll",
+      "name": "Scroll: Phoenix Flower Jutsu", "nameVi": "Scroll: Nhẫn Thuật Hoa Phượng Hoàng",
+      "type": "scroll", "rarity": "common", "jutsuRef": "jutsu_f02",
       "stackable": false,
-      "description": "Học Water Whip (Tier 1). Drop từ boss Zaborax (uncommon)."
+      "description": "Học Phoenix Flower Jutsu (Lửa, Tier 1). Bán tại shop Konohara (500 ryo)."
     },
     {
       "id": "jutsu_f03_scroll",
-      "name": "Scroll: Great Fireball",
-      "nameVi": "Scroll: Đại Cầu Lửa",
-      "type": "scroll",
-      "rarity": "rare",
-      "jutsuRef": "jutsu_f03",
+      "name": "Scroll: Great Fireball", "nameVi": "Scroll: Đại Cầu Lửa",
+      "type": "scroll", "rarity": "rare", "jutsuRef": "jutsu_f03",
       "stackable": false,
-      "description": "Học Great Fireball (Tier 2). Drop từ boss Zaborax (rare) và boss Arc 3 (uncommon)."
-    },
-    {
-      "id": "jutsu_wi02_scroll",
-      "name": "Scroll: Vacuum Sphere",
-      "nameVi": "Scroll: Chân Không Cầu",
-      "type": "scroll",
-      "rarity": "rare",
-      "jutsuRef": "jutsu_wi02",
-      "stackable": false,
-      "description": "Học Vacuum Sphere (Tier 2). Drop từ boss Hakuren (rare)."
-    },
-    {
-      "id": "jutsu_e03_scroll",
-      "name": "Scroll: Earth Spike",
-      "nameVi": "Scroll: Gai Đất",
-      "type": "scroll",
-      "rarity": "rare",
-      "jutsuRef": "jutsu_e03",
-      "stackable": false,
-      "description": "Học Earth Spike (Tier 2). Drop từ boss Garrek (rare)."
-    },
-    {
-      "id": "jutsu_e04_scroll",
-      "name": "Scroll: Earth Wall Crush",
-      "nameVi": "Scroll: Trường Thành Đất",
-      "type": "scroll",
-      "rarity": "uncommon",
-      "jutsuRef": "jutsu_e04",
-      "stackable": false,
-      "description": "Học Earth Wall Crush (Tier 2). Drop từ boss Garrek (uncommon)."
+      "description": "Học Great Fireball (Lửa, Tier 2). Drop từ boss Zaborax (rare). Cũng bán tại shop Konohara tier2 (1500 ryo)."
     },
     {
       "id": "jutsu_f04_scroll",
-      "name": "Scroll: Fire Dragon Flame",
-      "nameVi": "Scroll: Hỏa Long Diễm",
-      "type": "scroll",
-      "rarity": "rare",
-      "jutsuRef": "jutsu_f04",
+      "name": "Scroll: Fire Dragon Flame Bullet", "nameVi": "Scroll: Hỏa Long Đạn",
+      "type": "scroll", "rarity": "rare", "jutsuRef": "jutsu_f04",
       "stackable": false,
-      "description": "Học Fire Dragon Flame (Tier 2). Drop từ boss Garrek (rare)."
+      "description": "Học Fire Dragon Flame Bullet (Lửa, Tier 3). Drop từ boss Garrek (Arc 2, rare)."
     },
     {
-      "id": "jutsu_l02_scroll",
-      "name": "Scroll: Chidori Stream",
-      "nameVi": "Scroll: Dòng Điện Chidori",
-      "type": "scroll",
-      "rarity": "uncommon",
-      "jutsuRef": "jutsu_l02",
+      "id": "jutsu_w01_scroll",
+      "name": "Scroll: Water Whip", "nameVi": "Scroll: Roi Nước",
+      "type": "scroll", "rarity": "common", "jutsuRef": "jutsu_w01",
       "stackable": false,
-      "description": "Học Chidori Stream (Tier 2). Drop từ boss Arc 3 (uncommon) và enemy sound_grunt (rare)."
+      "description": "Học Water Whip (Nước, Tier 1). Bán tại shop Konohara (500 ryo). Cũng drop từ boss Zaborax (uncommon)."
     },
     {
-      "id": "jutsu_l03_scroll",
-      "name": "Scroll: Lightning Blade",
-      "nameVi": "Scroll: Lưỡi Sét",
-      "type": "scroll",
-      "rarity": "rare",
-      "jutsuRef": "jutsu_l03",
+      "id": "jutsu_w02_scroll",
+      "name": "Scroll: Phantom Mist Technique", "nameVi": "Scroll: Ảo Thuật Sương Mù",
+      "type": "scroll", "rarity": "uncommon", "jutsuRef": "jutsu_w02",
       "stackable": false,
-      "description": "Học Lightning Blade (Tier 2). Drop từ boss Arc 3 (rare)."
-    },
-    {
-      "id": "jutsu_n07_scroll",
-      "name": "Scroll: Wood Clone",
-      "nameVi": "Scroll: Phân Thân Gỗ",
-      "type": "scroll",
-      "rarity": "rare",
-      "jutsuRef": "jutsu_n07",
-      "stackable": false,
-      "description": "Học Wood Clone (Tier 2). Drop từ boss Arc 3 (rare). Cũng bán tại Reimei Broker (4500 ryo)."
-    },
-    {
-      "id": "jutsu_n08_scroll",
-      "name": "Scroll: Wood Locking Wall",
-      "nameVi": "Scroll: Tường Gỗ Phong Tỏa",
-      "type": "scroll",
-      "rarity": "rare",
-      "jutsuRef": "jutsu_n08",
-      "stackable": false,
-      "description": "Học Wood Locking Wall (Tier 2). Drop từ boss Arc 4 (rare)."
-    },
-    {
-      "id": "jutsu_l04_scroll",
-      "name": "Scroll: Electromagnetic Murder",
-      "nameVi": "Scroll: Điện Từ Sát",
-      "type": "scroll",
-      "rarity": "uncommon",
-      "jutsuRef": "jutsu_l04",
-      "stackable": false,
-      "description": "Học Electromagnetic Murder (Tier 2). Drop từ boss Arc 4 (uncommon)."
+      "description": "Học Phantom Mist Technique (Nước, Tier 2). Drop từ boss Hakuren (Arc 1, rare) và hidden quest arc1_scroll_A. Bán tại shop Konohara (1500 ryo) và Reimei Broker (1200 ryo)."
     },
     {
       "id": "jutsu_w04_scroll",
-      "name": "Scroll: Water Shark Bomb",
-      "nameVi": "Scroll: Bom Cá Mập Thủy",
-      "type": "scroll",
-      "rarity": "uncommon",
-      "jutsuRef": "jutsu_w04",
+      "name": "Scroll: Exploding Water Shockwave", "nameVi": "Scroll: Thủy Lôi Bộc Phát",
+      "type": "scroll", "rarity": "legendary", "jutsuRef": "jutsu_w04",
       "stackable": false,
-      "description": "Học Water Shark Bomb (Tier 2). Drop từ boss Arc 4 (uncommon)."
+      "description": "Học Exploding Water Shockwave (Nước, Tier 4). Drop từ boss Orochimaru (Arc 4, rare)."
+    },
+    {
+      "id": "jutsu_e01_scroll",
+      "name": "Scroll: Earth Wall", "nameVi": "Scroll: Thổ Tường",
+      "type": "scroll", "rarity": "common", "jutsuRef": "jutsu_e01",
+      "stackable": false,
+      "description": "Học Earth Wall (Đất, Tier 1). Bán tại shop Konohara (500 ryo)."
+    },
+    {
+      "id": "jutsu_e02_scroll",
+      "name": "Scroll: Rock Fist", "nameVi": "Scroll: Quyền Đá",
+      "type": "scroll", "rarity": "common", "jutsuRef": "jutsu_e02",
+      "stackable": false,
+      "description": "Học Rock Fist (Đất, Tier 1). Bán tại shop Konohara (500 ryo)."
+    },
+    {
+      "id": "jutsu_e03_scroll",
+      "name": "Scroll: Earth Spear", "nameVi": "Scroll: Thổ Thương",
+      "type": "scroll", "rarity": "rare", "jutsuRef": "jutsu_e03",
+      "stackable": false,
+      "description": "Học Earth Spear (Đất, Tier 2). Drop từ boss Garrek (Arc 2, rare)."
+    },
+    {
+      "id": "jutsu_e04_scroll",
+      "name": "Scroll: Sand Coffin", "nameVi": "Scroll: Quan Tài Cát",
+      "type": "scroll", "rarity": "rare", "jutsuRef": "jutsu_e04",
+      "stackable": false,
+      "description": "Học Sand Coffin (Đất, Tier 3). Drop từ boss Garrek (Arc 2, uncommon)."
+    },
+    {
+      "id": "jutsu_wi01_scroll",
+      "name": "Scroll: Wind Slash", "nameVi": "Scroll: Phong Trảm",
+      "type": "scroll", "rarity": "common", "jutsuRef": "jutsu_wi01",
+      "stackable": false,
+            "description": "Học Wind Slash (Gió, Tier 1). Bán tại shop Konohara (500 ryo)."
+    },
+    {
+      "id": "jutsu_wi02_scroll",
+      "name": "Scroll: Vacuum Sphere", "nameVi": "Scroll: Chan Khong Cau",
+      "type": "scroll", "rarity": "rare", "jutsuRef": "jutsu_wi02",
+      "stackable": false,
+      "description": "Hoc Vacuum Sphere (Gio, Tier 2). Drop tu boss Temari (Arc 2) va hidden quest arc2. Combine tu 3 jutsu_wi02_fragment."
+    },
+    {
+      "id": "jutsu_l01_scroll",
+      "name": "Scroll: Static Charge", "nameVi": "Scroll: Tinh Dien",
+      "type": "scroll", "rarity": "common", "jutsuRef": "jutsu_l01",
+      "stackable": false,
+      "description": "Hoc Static Charge (Set, Tier 1). Ban tai shop Konohara (500 ryo)."
+    },
+    {
+      "id": "jutsu_l02_scroll",
+      "name": "Scroll: Chidori Stream", "nameVi": "Scroll: Dong Dien Chidori",
+      "type": "scroll", "rarity": "uncommon", "jutsuRef": "jutsu_l02",
+      "stackable": false,
+      "description": "Hoc Chidori Stream (Set, Tier 2). Drop tu boss Arc 3 (uncommon) va enemy sound_grunt (rare)."
+    },
+    {
+      "id": "jutsu_l03_scroll",
+      "name": "Scroll: Raikousen", "nameVi": "Scroll: Loi Quang",
+      "type": "scroll", "rarity": "rare", "jutsuRef": "jutsu_l03",
+      "stackable": false,
+      "description": "Hoc Raikousen (Set, Tier 3). Drop tu boss Arc 3 phase1 (rare)."
+    },
+    {
+      "id": "jutsu_l04_scroll",
+      "name": "Scroll: Electromagnetic Murder", "nameVi": "Scroll: Dien Tu Sat",
+      "type": "scroll", "rarity": "uncommon", "jutsuRef": "jutsu_l04",
+      "stackable": false,
+      "description": "Hoc Electromagnetic Murder (Set, Tier 4). Drop tu boss Orochimaru (Arc 4, uncommon)."
+    },
+    {
+      "id": "jutsu_n01_scroll",
+      "name": "Scroll: Spirit Double Jutsu", "nameVi": "Scroll: Nhan Thuat Phan Than Bong",
+      "type": "scroll", "rarity": "uncommon", "jutsuRef": "jutsu_n01",
+      "stackable": false,
+      "description": "Hoc Spirit Double Jutsu (Vo he, Tier 2). Ban tai shop Konohara (1500 ryo). Reward quest q108."
+    },
+    {
+      "id": "jutsu_n02_scroll",
+      "name": "Scroll: Substitution Jutsu", "nameVi": "Scroll: Nhan Thuat Thay The",
+      "type": "scroll", "rarity": "common", "jutsuRef": "jutsu_n02",
+      "stackable": false,
+      "description": "Hoc Substitution Jutsu (Vo he, Tier 1). Ban tai shop Konohara (500 ryo). Reward quest q101."
+    },
+    {
+      "id": "jutsu_n07_scroll",
+      "name": "Scroll: Branded Seal Technique", "nameVi": "Scroll: Ky Thuat An Hieu",
+      "type": "scroll", "rarity": "rare", "jutsuRef": "jutsu_n07",
+      "stackable": false,
+      "description": "Hoc Branded Seal Technique (Vo he, Tier 3). Drop tu boss Arc 3 phase2 (rare). Ban tai Reimei Broker (4500 ryo, reimei rep >= 30)."
+    },
+    {
+      "id": "jutsu_n08_scroll",
+      "name": "Scroll: Serpent Rebirth", "nameVi": "Scroll: Tai Sinh Cua Orokimaru",
+      "type": "scroll", "rarity": "legendary", "jutsuRef": "jutsu_n08",
+      "stackable": false,
+      "description": "Hoc Serpent Rebirth (Vo he, Tier 4). Unlock qua villain branch hoac reimei_hidden_quest_A."
     }
   ]
 }

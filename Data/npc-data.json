@@ -251,17 +251,17 @@
         "tier": "jutsu_tier1_tier2",
         "discountCondition": { "village": 50, "discount": 0.10 },
         "items": [
-          { "id": "jutsu_f01",  "price": 500  },
-          { "id": "jutsu_f02",  "price": 500  },
-          { "id": "jutsu_w01",  "price": 500  },
-          { "id": "jutsu_e01",  "price": 500  },
-          { "id": "jutsu_e02",  "price": 500  },
-          { "id": "jutsu_wi01", "price": 500  },
-          { "id": "jutsu_l01",  "price": 500  },
-          { "id": "jutsu_n02",  "price": 500  },
-          { "id": "jutsu_f03",  "price": 1500 },
-          { "id": "jutsu_w02",  "price": 1500 },
-          { "id": "jutsu_n01",  "price": 1500 }
+          { "id": "jutsu_f01_scroll",  "price": 500  },
+          { "id": "jutsu_f02_scroll",  "price": 500  },
+          { "id": "jutsu_w01_scroll",  "price": 500  },
+          { "id": "jutsu_e01_scroll",  "price": 500  },
+          { "id": "jutsu_e02_scroll",  "price": 500  },
+          { "id": "jutsu_wi01_scroll", "price": 500  },
+          { "id": "jutsu_l01_scroll",  "price": 500  },
+          { "id": "jutsu_n02_scroll",  "price": 500  },
+          { "id": "jutsu_f03_scroll",  "price": 1500 },
+          { "id": "jutsu_w02_scroll",  "price": 1500 },
+          { "id": "jutsu_n01_scroll",  "price": 1500 }
         ]
       }
     },
@@ -283,8 +283,8 @@
       "shopInventory": {
         "tier": "reimei_exclusive",
         "items": [
-          { "id": "jutsu_w02", "price": 1200, "note": "Đắt hơn shop Konohara nhưng không cần village rep" },
-          { "id": "jutsu_n07", "price": 4500, "note": "Chỉ bán cho reimei rep >= 30" },
+          { "id": "jutsu_w02_scroll", "price": 1200, "note": "Đắt hơn shop Konohara nhưng không cần village rep" },
+          { "id": "jutsu_n07_scroll", "price": 4500, "note": "Chỉ bán cho reimei rep >= 30" },
           { "id": "reimei_cloak_cosmetic", "price": 2000 },
           { "id": "reimei_ring_cosmetic",  "price": 3000 }
         ]
@@ -423,6 +423,36 @@
         "dune_village_gate",
         "dune_village_market"
       ]
+    },
+    "konohara_memorial_stone": {
+      "label": "Đài Tưởng Niệm Konohara",
+      "type": "safe_zone",
+      "arcUnlock": 3,
+      "note": "Nơi Hokage Đệ Tam xuất hiện trong Arc 3–4. Chưa dùng trong v0.1."
+    },
+    "konohara_chunin_arena": {
+      "label": "Sân Đấu Kỳ Thi Chunin",
+      "type": "pvp_zone",
+      "arcUnlock": 2,
+      "note": "Arena chính của Chunin Exam Arc 2. Chưa dùng trong v0.1."
+    },
+    "konohara_outskirts_forest": {
+      "label": "Rừng Ngoại Ô Konohara",
+      "type": "pvp_zone",
+      "arcUnlock": 2,
+      "note": "Zone hậu Chunin Exam. Chưa dùng trong v0.1."
+    },
+    "konohara_rooftop_hidden": {
+      "label": "Mái Nhà Bí Mật — Konohara",
+      "type": "safe_zone",
+      "arcUnlock": 1,
+      "repRequirement": { "village": 30 },
+      "note": "Điểm gặp NPC questGiver ẩn — mở khi village rep >= 30. Có thể đạt trong Arc 1."
+    },
+    "rotating_hidden_locations": {
+      "label": "Diem Bi Mat Luan Phien",
+      "type": "dynamic",
+      "note": "Location dac biet - Reimei Broker xuat hien o cac diem bi mat thay doi moi tuan. Vi tri resolve runtime boi NPCSpawner."
     }
   }
 }

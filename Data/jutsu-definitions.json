@@ -141,7 +141,7 @@
       "effects": [
         { "type": "mist", "duration": 12, "visionReduction": 70 }
       ],
-      "source": ["hidden_quest_arc1_scroll_A"],
+      "source": ["hidden_quest_arc1_scroll_A", "boss_drop_hakuren_arc1_rare", "shop_konohara_tier2", "shop_reimei_broker"],
       "pvpUsable": true,
       "description": "Tạo sương mù dày đặc quanh bản thân — giảm tầm nhìn địch 70% trong 12 giây. Không gây damage."
     },
