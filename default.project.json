@@ -1,0 +1,22 @@
+{
+  "name": "naruto-roblox",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+
+      "Shared": {
+        "$path": "src/Shared"
+      }
+    },
+
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+
+      "Systems": {
+        "$path": "src/Server/Systems"
+      }
+    }
+  }
+}
