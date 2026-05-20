@@ -19,12 +19,11 @@
     ]
   },
   "affinityRules": {
-    "costReduction": 0.30,
+    "costReduction": 0.3,
     "damageBonus": 0.15,
     "description": "Jutsu đúng Chakra Affinity: -30% chakraCost, +15% baseDamage"
   },
   "jutsu": [
-
     {
       "id": "jutsu_f01",
       "name": "Fireball Jutsu",
@@ -39,7 +38,10 @@
       "aoeRadius": 6,
       "learnCostSP": 1,
       "effects": [],
-      "source": ["quest_q103_reward", "shop_konohara_tier1"],
+      "source": [
+        "quest_q103_reward",
+        "shop_konohara_tier1"
+      ],
       "pvpUsable": true,
       "description": "Jutsu lửa cơ bản — phun quả cầu lửa tầm trung, AOE nhỏ khi chạm đất"
     },
@@ -57,9 +59,16 @@
       "aoeRadius": 0,
       "learnCostSP": 1,
       "effects": [
-        { "type": "burn", "duration": 3, "tickDamage": 8 }
+        {
+          "type": "burn",
+          "duration": 3,
+          "tickDamage": 8
+        }
       ],
-      "source": ["shop_konohara_tier1", "drop_random_enemy_arc1"],
+      "source": [
+        "shop_konohara_tier1",
+        "drop_random_enemy_arc1"
+      ],
       "pvpUsable": true,
       "description": "Bắn nhiều viên lửa nhỏ liên tiếp — mỗi viên gây burn 3 giây"
     },
@@ -77,9 +86,16 @@
       "aoeRadius": 12,
       "learnCostSP": 3,
       "effects": [
-        { "type": "burn", "duration": 5, "tickDamage": 12 }
+        {
+          "type": "burn",
+          "duration": 5,
+          "tickDamage": 12
+        }
       ],
-      "source": ["boss_drop_zaborax_rare", "shop_konohara_tier2"],
+      "source": [
+        "boss_drop_zaborax_rare",
+        "shop_konohara_tier2"
+      ],
       "pvpUsable": true,
       "description": "Phiên bản lớn hơn Fireball — AOE lớn hơn, burn lâu hơn, cần charge 1 giây"
     },
@@ -97,14 +113,23 @@
       "aoeRadius": 8,
       "learnCostSP": 6,
       "effects": [
-        { "type": "burn", "duration": 6, "tickDamage": 18 },
-        { "type": "knockback", "force": 40 }
+        {
+          "type": "burn",
+          "duration": 6,
+          "tickDamage": 18
+        },
+        {
+          "type": "knockback",
+          "force": 40
+        }
       ],
-      "source": ["boss_drop_garrek_arc2", "quest_hidden_arc2"],
+      "source": [
+        "boss_drop_garrek_arc2",
+        "quest_hidden_arc2"
+      ],
       "pvpUsable": true,
       "description": "Rồng lửa lao thẳng vào mục tiêu — damage cao, knockback mạnh"
     },
-
     {
       "id": "jutsu_w01",
       "name": "Water Whip",
@@ -119,9 +144,16 @@
       "aoeRadius": 0,
       "learnCostSP": 1,
       "effects": [
-        { "type": "slow", "duration": 2, "slowPercent": 20 }
+        {
+          "type": "slow",
+          "duration": 2,
+          "slowPercent": 20
+        }
       ],
-      "source": ["quest_q105_reward", "shop_konohara_tier1"],
+      "source": [
+        "quest_q105_reward",
+        "shop_konohara_tier1"
+      ],
       "pvpUsable": true,
       "description": "Roi nước đánh đơn — slow nhẹ mục tiêu 2 giây"
     },
@@ -139,9 +171,18 @@
       "aoeRadius": 25,
       "learnCostSP": 3,
       "effects": [
-        { "type": "mist", "duration": 12, "visionReduction": 70 }
+        {
+          "type": "mist",
+          "duration": 12,
+          "visionReduction": 70
+        }
       ],
-      "source": ["hidden_quest_arc1_scroll_A", "boss_drop_hakuren_arc1_rare", "shop_konohara_tier2", "shop_reimei_broker"],
+      "source": [
+        "hidden_quest_arc1_choice_A",
+        "boss_drop_hakuren_arc1_rare",
+        "shop_konohara_tier2",
+        "shop_reimei_broker"
+      ],
       "pvpUsable": true,
       "description": "Tạo sương mù dày đặc quanh bản thân — giảm tầm nhìn địch 70% trong 12 giây. Không gây damage."
     },
@@ -159,10 +200,19 @@
       "aoeRadius": 10,
       "learnCostSP": 7,
       "effects": [
-        { "type": "slow", "duration": 4, "slowPercent": 40 },
-        { "type": "knockback", "force": 50 }
+        {
+          "type": "slow",
+          "duration": 4,
+          "slowPercent": 40
+        },
+        {
+          "type": "knockback",
+          "force": 50
+        }
       ],
-      "source": ["boss_drop_zaborax_kill_arc1"],
+      "source": [
+        "boss_drop_zaborax_kill_arc1"
+      ],
       "pvpUsable": true,
       "description": "Rồng nước khổng lồ — cast time dài nhưng damage và slow rất mạnh. Drop từ Zaborax."
     },
@@ -180,14 +230,21 @@
       "aoeRadius": 20,
       "learnCostSP": 12,
       "effects": [
-        { "type": "stun", "duration": 2 },
-        { "type": "knockback", "force": 80 }
+        {
+          "type": "stun",
+          "duration": 2
+        },
+        {
+          "type": "knockback",
+          "force": 80
+        }
       ],
-      "source": ["boss_drop_orokimaru_arc4_rare"],
+      "source": [
+        "boss_drop_orokimaru_arc4_rare"
+      ],
       "pvpUsable": true,
       "description": "Sóng nước khổng lồ AOE rộng — stun và knockback toàn bộ địch trong vùng"
     },
-
     {
       "id": "jutsu_e01",
       "name": "Earth Wall",
@@ -202,9 +259,16 @@
       "aoeRadius": 0,
       "learnCostSP": 1,
       "effects": [
-        { "type": "shield", "shieldHP": 150, "duration": 6 }
+        {
+          "type": "shield",
+          "shieldHP": 150,
+          "duration": 6
+        }
       ],
-      "source": ["shop_konohara_tier1", "drop_random_enemy_arc1"],
+      "source": [
+        "shop_konohara_tier1",
+        "drop_random_enemy_arc1"
+      ],
       "pvpUsable": true,
       "description": "Dựng tường đất trước mặt — chặn đòn vật lý và ninjutsu nhỏ trong 6 giây"
     },
@@ -222,9 +286,14 @@
       "aoeRadius": 0,
       "learnCostSP": 1,
       "effects": [
-        { "type": "stagger", "duration": 1 }
+        {
+          "type": "stagger",
+          "duration": 1
+        }
       ],
-      "source": ["shop_konohara_tier1"],
+      "source": [
+        "shop_konohara_tier1"
+      ],
       "pvpUsable": true,
       "description": "Bọc tay bằng đá, đấm mạnh — stagger nhẹ 1 giây"
     },
@@ -242,9 +311,16 @@
       "aoeRadius": 0,
       "learnCostSP": 3,
       "effects": [
-        { "type": "armorBuff", "duration": 8, "damageReduction": 30 }
+        {
+          "type": "armorBuff",
+          "duration": 8,
+          "damageReduction": 30
+        }
       ],
-      "source": ["boss_drop_jirobo_arc3", "shop_dune_village"],
+      "source": [
+        "boss_drop_jirobo_arc3",
+        "shop_dune_village"
+      ],
       "pvpUsable": true,
       "description": "Toàn thân cứng như đá — giảm damage nhận 30% trong 8 giây, đòn melee mạnh hơn"
     },
@@ -262,14 +338,22 @@
       "aoeRadius": 0,
       "learnCostSP": 8,
       "effects": [
-        { "type": "root", "duration": 4 },
-        { "type": "dot", "duration": 4, "tickDamage": 20 }
+        {
+          "type": "root",
+          "duration": 4
+        },
+        {
+          "type": "dot",
+          "duration": 4,
+          "tickDamage": 20
+        }
       ],
-      "source": ["boss_drop_garrek_arc2_kill"],
+      "source": [
+        "boss_drop_garrek_arc2_kill"
+      ],
       "pvpUsable": true,
       "description": "Cát bao vây mục tiêu — root 4 giây + damage theo thời gian. Drop từ Garrek."
     },
-
     {
       "id": "jutsu_wi01",
       "name": "Wind Slash",
@@ -284,9 +368,15 @@
       "aoeRadius": 0,
       "learnCostSP": 1,
       "effects": [
-        { "type": "bleed", "duration": 3, "tickDamage": 6 }
+        {
+          "type": "bleed",
+          "duration": 3,
+          "tickDamage": 6
+        }
       ],
-      "source": ["shop_konohara_tier1"],
+      "source": [
+        "shop_konohara_tier1"
+      ],
       "pvpUsable": true,
       "description": "Lưỡi gió đơn — nhẹ nhưng gây chảy máu (bleed) 3 giây"
     },
@@ -304,9 +394,15 @@
       "aoeRadius": 0,
       "learnCostSP": 3,
       "effects": [
-        { "type": "pierce", "description": "Xuyên qua shield và Earth Wall" }
+        {
+          "type": "pierce",
+          "description": "Xuyên qua shield và Earth Wall"
+        }
       ],
-      "source": ["shop_dune_village", "boss_drop_temari_arc2"],
+      "source": [
+        "shop_dune_village",
+        "boss_drop_temari_arc2"
+      ],
       "pvpUsable": true,
       "description": "Viên gió nén — tầm xa, xuyên qua shield và Earth Wall"
     },
@@ -324,14 +420,24 @@
       "aoeRadius": 6,
       "learnCostSP": 6,
       "effects": [
-        { "type": "bleed", "duration": 5, "tickDamage": 15 },
-        { "type": "slow", "duration": 3, "slowPercent": 25 }
+        {
+          "type": "bleed",
+          "duration": 5,
+          "tickDamage": 15
+        },
+        {
+          "type": "slow",
+          "duration": 3,
+          "slowPercent": 25
+        }
       ],
-      "source": ["boss_drop_tayuya_arc3_kill", "quest_hidden_arc2"],
+      "source": [
+        "boss_drop_tayuya_arc3_kill",
+        "quest_hidden_arc2"
+      ],
       "pvpUsable": true,
       "description": "Liềm gió khổng lồ cắt theo đường thẳng — bleed và slow mục tiêu"
     },
-
     {
       "id": "jutsu_l01",
       "name": "Static Charge",
@@ -346,9 +452,14 @@
       "aoeRadius": 4,
       "learnCostSP": 1,
       "effects": [
-        { "type": "paralyze", "duration": 1 }
+        {
+          "type": "paralyze",
+          "duration": 1
+        }
       ],
-      "source": ["shop_konohara_tier1"],
+      "source": [
+        "shop_konohara_tier1"
+      ],
       "pvpUsable": true,
       "description": "Phóng tia điện nhỏ — paralyze 1 giây, damage thấp nhưng interrupt jutsu địch"
     },
@@ -366,10 +477,19 @@
       "aoeRadius": 8,
       "learnCostSP": 4,
       "effects": [
-        { "type": "paralyze", "duration": 2 },
-        { "type": "pierce", "description": "Xuyên qua Earth Wall" }
+        {
+          "type": "paralyze",
+          "duration": 2
+        },
+        {
+          "type": "pierce",
+          "description": "Xuyên qua Earth Wall"
+        }
       ],
-      "source": ["boss_drop_sazuki_arc3", "quest_q208_reward"],
+      "source": [
+        "boss_drop_sazuki_arc3",
+        "quest_q208_reward"
+      ],
       "pvpUsable": true,
       "description": "Phiên bản AOE của Raikousen — điện lan ra xung quanh, xuyên đất"
     },
@@ -387,10 +507,19 @@
       "aoeRadius": 0,
       "learnCostSP": 8,
       "effects": [
-        { "type": "paralyze", "duration": 3 },
-        { "type": "armorBreak", "duration": 5, "extraDamagePercent": 20 }
+        {
+          "type": "paralyze",
+          "duration": 3
+        },
+        {
+          "type": "armorBreak",
+          "duration": 5,
+          "extraDamagePercent": 20
+        }
       ],
-      "source": ["boss_drop_sazuki_arc3_phase1_no_lightning"],
+      "source": [
+        "boss_drop_sazuki_arc3_phase1_no_lightning"
+      ],
       "pvpUsable": true,
       "description": "Raikousen chuẩn — damage cực cao, phá giáp 5 giây. Cần đến gần. Drop từ Sazuki Arc 3."
     },
@@ -408,14 +537,22 @@
       "aoeRadius": 15,
       "learnCostSP": 11,
       "effects": [
-        { "type": "paralyze", "duration": 2 },
-        { "type": "chain", "maxTargets": 4, "chainDamagePercent": 60 }
+        {
+          "type": "paralyze",
+          "duration": 2
+        },
+        {
+          "type": "chain",
+          "maxTargets": 4,
+          "chainDamagePercent": 60
+        }
       ],
-      "source": ["boss_drop_orokimaru_arc4"],
+      "source": [
+        "boss_drop_orokimaru_arc4"
+      ],
       "pvpUsable": true,
       "description": "Sét rộng AOE — chain sang tối đa 4 mục tiêu gần nhau với 60% damage"
     },
-
     {
       "id": "jutsu_n01",
       "name": "Spirit Double Jutsu",
@@ -430,9 +567,16 @@
       "aoeRadius": 0,
       "learnCostSP": 4,
       "effects": [
-        { "type": "clone", "cloneCount": 2, "cloneHP": 80, "cloneDuration": 20 }
+        {
+          "type": "clone",
+          "cloneCount": 2,
+          "cloneHP": 80,
+          "cloneDuration": 20
+        }
       ],
-      "source": ["quest_q108_reward"],
+      "source": [
+        "quest_q108_reward"
+      ],
       "pvpUsable": true,
       "description": "Tạo 2 phân thân có HP riêng — clone tấn công địch gần nhất tự động"
     },
@@ -450,9 +594,15 @@
       "aoeRadius": 0,
       "learnCostSP": 2,
       "effects": [
-        { "type": "dodge", "description": "Né 1 đòn tiếp theo trong 3 giây, swap vị trí với khúc gỗ" }
+        {
+          "type": "dodge",
+          "description": "Né 1 đòn tiếp theo trong 3 giây, swap vị trí với khúc gỗ"
+        }
       ],
-      "source": ["shop_konohara_tier1", "quest_q101_reward"],
+      "source": [
+        "shop_konohara_tier1",
+        "quest_q101_reward"
+      ],
       "pvpUsable": true,
       "description": "Né hoàn toàn 1 đòn bất kỳ — có 3 giây để kích hoạt sau khi dùng"
     },
@@ -470,10 +620,19 @@
       "aoeRadius": 5,
       "learnCostSP": 7,
       "effects": [
-        { "type": "knockback", "force": 70 },
-        { "type": "armorBreak", "duration": 4, "extraDamagePercent": 15 }
+        {
+          "type": "knockback",
+          "force": 70
+        },
+        {
+          "type": "armorBreak",
+          "duration": 4,
+          "extraDamagePercent": 15
+        }
       ],
-      "source": ["quest_q405_witness_naruko"],
+      "source": [
+        "quest_q405_witness_naruko"
+      ],
       "pvpUsable": true,
       "description": "Cầu xoáy chakra — melee damage rất cao, knockback mạnh. Học sau khi chứng kiến Naruko hoàn thành."
     },
@@ -491,10 +650,19 @@
       "aoeRadius": 10,
       "learnCostSP": 7,
       "effects": [
-        { "type": "reflect", "duration": 3, "reflectPercent": 40 },
-        { "type": "knockback", "force": 60 }
+        {
+          "type": "reflect",
+          "duration": 3,
+          "reflectPercent": 40
+        },
+        {
+          "type": "knockback",
+          "force": 60
+        }
       ],
-      "source": ["quest_q208_hinata_dialogue"],
+      "source": [
+        "quest_q208_hinata_dialogue"
+      ],
       "pvpUsable": true,
       "description": "Xoay người tạo vùng khí chakra — phản 40% damage trong 3 giây, đẩy địch ra xa"
     },
@@ -512,9 +680,16 @@
       "aoeRadius": 12,
       "learnCostSP": 8,
       "effects": [
-        { "type": "summon", "summonId": "toad_small", "summonHP": 500, "summonDuration": 30 }
+        {
+          "type": "summon",
+          "summonId": "toad_small",
+          "summonHP": 500,
+          "summonDuration": 30
+        }
       ],
-      "source": ["quest_q210_naruko_choice_A"],
+      "source": [
+        "quest_q210_naruko_choice_A"
+      ],
       "pvpUsable": true,
       "description": "Triệu hồi cóc nhỏ chiến đấu cùng — tự tấn công địch gần nhất, cooldown 60 giây"
     },
@@ -532,9 +707,15 @@
       "aoeRadius": 0,
       "learnCostSP": 3,
       "effects": [
-        { "type": "heal", "healAmount": 150 }
+        {
+          "type": "heal",
+          "healAmount": 150
+        }
       ],
-      "source": ["item_kabuto_notebook", "shop_konohara_tier2"],
+      "source": [
+        "item_kabuto_notebook",
+        "shop_konohara_tier2"
+      ],
       "pvpUsable": false,
       "description": "Hồi phục 150 HP — không thể dùng trong PvP zone, chỉ dùng PvE"
     },
@@ -557,10 +738,16 @@
           "duration": 30,
           "damageBonus": 40,
           "speedBonus": 20,
-          "afterEffect": { "type": "exhaustion", "duration": 15, "damageReduction": 30 }
+          "afterEffect": {
+            "type": "exhaustion",
+            "duration": 15,
+            "damageReduction": 30
+          }
         }
       ],
-      "source": ["boss_drop_sazuki_arc3_phase2"],
+      "source": [
+        "boss_drop_sazuki_arc3_phase2"
+      ],
       "pvpUsable": true,
       "description": "Kích hoạt trạng thái tăng cường 30 giây (+40% damage, +20% speed) — sau đó kiệt sức 15 giây. Cooldown 2 phút."
     },
@@ -578,9 +765,15 @@
       "aoeRadius": 0,
       "learnCostSP": 14,
       "effects": [
-        { "type": "revive", "description": "Khi HP về 0: tự động kích hoạt một lần duy nhất mỗi lần deploy, hồi 30% HP tối đa" }
+        {
+          "type": "revive",
+          "description": "Khi HP về 0: tự động kích hoạt một lần duy nhất mỗi lần deploy, hồi 30% HP tối đa"
+        }
       ],
-      "source": ["villain_branch_orokimaru_offer", "reimei_hidden_quest_A"],
+      "source": [
+        "villain_branch_orokimaru_offer",
+        "reimei_hidden_quest_A"
+      ],
       "pvpUsable": true,
       "description": "Jutsu tái sinh — tự động kích hoạt khi chết lần đầu trong trận, hồi 30% HP. Cooldown 5 phút."
     },
@@ -605,14 +798,19 @@
           "speedBonus": 30,
           "chakraRegenBonus": 50,
           "allJutsuCooldownReduction": 40,
-          "afterEffect": { "type": "petrification", "duration": 20, "description": "Không thể di chuyển hoặc dùng jutsu" }
+          "afterEffect": {
+            "type": "petrification",
+            "duration": 20,
+            "description": "Không thể di chuyển hoặc dùng jutsu"
+          }
         }
       ],
-      "source": ["postgame_jiraiya_quest_hero_ending_only"],
+      "source": [
+        "postgame_jiraiya_quest_hero_ending_only"
+      ],
       "pvpUsable": true,
       "description": "Trạng thái tiên nhân chưa hoàn chỉnh — 45 giây siêu mạnh, sau đó hóa đá 20 giây. Cooldown 3 phút."
     },
-
     {
       "id": "jutsu_strength_hundred",
       "name": "Strength of a Hundred Seal",
@@ -620,6 +818,5 @@
       "status": "deferred_arc4",
       "note": "Jutsu dạy bởi npc_tsukade, điều kiện: choice_B_q409 AND village_rep >= 60. Chưa thiết kế full — placeholder để resolve dangling reference từ npc_tsukade.specialTeach."
     }
-
   ]
 }

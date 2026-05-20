@@ -10,9 +10,7 @@
     },
     "dialogueStates": "NPC có nhiều state tùy theo arc hiện tại và reputation của player"
   },
-
   "npcs": [
-
     {
       "id": "npc_kakashi",
       "name": "Hatari Kakari",
@@ -30,18 +28,20 @@
         "note": "Kakashi nói chuyện với player trừ khi village rep < -49 (hostile threshold)"
       },
       "dialogueStates": {
-        "arc1_pre":    "Chào mừng đến Training Ground 7 — bài test của tao không đơn giản.",
-        "arc1_post":   "Mày đã làm tốt ở Tide Province. Tiếp tục như vậy.",
-        "arc2_pre":    "Chunin Exam không phải trò đùa. Chuẩn bị kỹ.",
-        "arc2_post":   "Sazuki... tao đã thất bại hắn. Mày thì sao?",
+        "arc1_pre": "Chào mừng đến Training Ground 7 — bài test của tao không đơn giản.",
+        "arc1_post": "Mày đã làm tốt ở Tide Province. Tiếp tục như vậy.",
+        "arc2_pre": "Chunin Exam không phải trò đùa. Chuẩn bị kỹ.",
+        "arc2_post": "Sazuki... tao đã thất bại hắn. Mày thì sao?",
         "arc3_post_chunin": "Ngươi đã làm đúng quy trình. Kết quả này không phải lỗi của ngươi.",
-        "arc3_post_genin":  "Ngươi đã cố hết sức. Đó là đủ rồi — cho hôm nay.",
-        "arc4_post":   "Tsukade về rồi. Làng sẽ ổn thôi."
+        "arc3_post_genin": "Ngươi đã cố hết sức. Đó là đủ rồi — cho hôm nay.",
+        "arc4_post": "Tsukade về rồi. Làng sẽ ổn thôi."
       },
-      "questsGiven": ["q101", "q201"],
+      "questsGiven": [
+        "q101",
+        "q201"
+      ],
       "shopInventory": null
     },
-
     {
       "id": "npc_naruko",
       "name": "Uzumaki Naruko",
@@ -54,12 +54,15 @@
         "arc3": "konohara_gate_south",
         "arc4": "western_road_traveling"
       },
-      "repRequirement": { "village": -100, "note": "Naruko nói chuyện với tất cả mọi người" },
+      "repRequirement": {
+        "village": -100,
+        "note": "Naruko nói chuyện với tất cả mọi người"
+      },
       "dialogueStates": {
-        "default":      "Dattebayo! Mày có muốn luyện tập cùng tao không?",
-        "arc1_wave":    "Tao sẽ bảo vệ tất cả mọi người — đó là con đường của tao!",
-        "arc3_post":    "Tao sẽ kéo Sazuki về... bằng mọi giá.",
-        "arc4_traveling":"Tao sẽ trở thành Hokage — mày chờ xem!",
+        "default": "Dattebayo! Mày có muốn luyện tập cùng tao không?",
+        "arc1_wave": "Tao sẽ bảo vệ tất cả mọi người — đó là con đường của tao!",
+        "arc3_post": "Tao sẽ kéo Sazuki về... bằng mọi giá.",
+        "arc4_traveling": "Tao sẽ trở thành Hokage — mày chờ xem!",
         "friendship_high": "Mày là người tao tin tưởng. Không thay đổi được đâu."
       },
       "questsGiven": [],
@@ -67,7 +70,6 @@
       "friendshipFlag": "naruko_friendship",
       "note": "Naruko friendship flag được set bởi các choice point trong arc 1-4"
     },
-
     {
       "id": "npc_hokage3",
       "name": "Hokage Đệ Tam — Sarutobi Hiruzan",
@@ -80,14 +82,19 @@
         "arc3": "konohara_memorial_stone",
         "arc4": "konohara_memorial_stone"
       },
-      "repRequirement": { "village": 0 },
+      "repRequirement": {
+        "village": 0
+      },
       "dialogueStates": {
-        "arc1":  "Nhiệm vụ bảo vệ Tazuru là C-Rank — nhưng hãy cẩn thận.",
-        "arc2":  "Kỳ thi Chunin là cơ hội để ngươi chứng tỏ bản thân.",
+        "arc1": "Nhiệm vụ bảo vệ Tazuru là C-Rank — nhưng hãy cẩn thận.",
+        "arc2": "Kỳ thi Chunin là cơ hội để ngươi chứng tỏ bản thân.",
         "arc3_dead": "[Đã hi sinh] Di thư để lại cho player nếu chọn [C] ở Q2-10.",
         "arc4_memorial": "[Bia tưởng niệm] Không còn dialogue — chỉ là điểm interact lore."
       },
-      "questsGiven": ["q102", "q201"],
+      "questsGiven": [
+        "q102",
+        "q201"
+      ],
       "specialItem": {
         "id": "hokage_testament",
         "condition": "q210_choice_C",
@@ -95,7 +102,6 @@
       },
       "shopInventory": null
     },
-
     {
       "id": "npc_jiruha",
       "name": "Jiruha (Sanin Ếch)",
@@ -105,17 +111,20 @@
       "locations": {
         "arc4": "western_road_traveling"
       },
-      "repRequirement": { "village": -19 },
+      "repRequirement": {
+        "village": -19
+      },
       "dialogueStates": {
-        "arc4_pre":   "Tìm Tsukade không dễ — bà ấy không muốn được tìm.",
-        "arc4_mid":   "Bà ấy đang trốn chạy ký ức. Tao hiểu cảm giác đó.",
-        "arc4_post":  "Hề... tao lại thắng cược rồi.",
+        "arc4_pre": "Tìm Tsukade không dễ — bà ấy không muốn được tìm.",
+        "arc4_mid": "Bà ấy đang trốn chạy ký ức. Tao hiểu cảm giác đó.",
+        "arc4_post": "Hề... tao lại thắng cược rồi.",
         "choice_C_q401": "Hm. Mày nhìn có vẻ mệt mỏi. Tao cũng vậy — đôi khi."
       },
-      "questsGiven": ["q401"],
+      "questsGiven": [
+        "q401"
+      ],
       "shopInventory": null
     },
-
     {
       "id": "npc_tsukade",
       "name": "Tsukade (Sanin Sên)",
@@ -123,15 +132,17 @@
       "faction": "village",
       "primaryLocation": "western_town_bar",
       "locations": {
-        "arc4_pre":  "western_town_bar",
+        "arc4_pre": "western_town_bar",
         "arc4_post": "konohara_hokage_office"
       },
-      "repRequirement": { "village": 0 },
+      "repRequirement": {
+        "village": 0
+      },
       "dialogueStates": {
-        "first_meeting":     "Người gì đây? Đi theo Jiruha à? Tội nghiệp.",
-        "post_naruko_bet":   "Thằng nhóc đó... nhắc tao nhớ đến ai đó.",
-        "post_combat":       "Orokimaru... hắn không bao giờ thay đổi.",
-        "arc4_decision_B":   "Ngươi đúng. Đây là quyết định của tao — không ai có thể trả lời thay.",
+        "first_meeting": "Người gì đây? Đi theo Jiruha à? Tội nghiệp.",
+        "post_naruko_bet": "Thằng nhóc đó... nhắc tao nhớ đến ai đó.",
+        "post_combat": "Orokimaru... hắn không bao giờ thay đổi.",
+        "arc4_decision_B": "Ngươi đúng. Đây là quyết định của tao — không ai có thể trả lời thay.",
         "arc4_post_honored": "Nếu village rep của ngươi đủ cao — bà có 1 jutsu muốn dạy riêng."
       },
       "questsGiven": [],
@@ -142,7 +153,6 @@
       },
       "shopInventory": null
     },
-
     {
       "id": "npc_shikamura",
       "name": "Nura Shikamura",
@@ -153,16 +163,19 @@
         "arc3": "konohara_gate_south",
         "arc3_end": "konohara_hospital"
       },
-      "repRequirement": { "village": -19 },
+      "repRequirement": {
+        "village": -19
+      },
       "dialogueStates": {
-        "arc3_pre":  "Thật phiền phức... nhưng chúng ta phải đi thôi.",
+        "arc3_pre": "Thật phiền phức... nhưng chúng ta phải đi thôi.",
         "arc3_post": "Mày sẽ làm gì nếu gặp lại Sazuki? Câu hỏi khó nhỉ.",
         "choice_C_q311": "Tao hiểu. Đôi khi câu trả lời thành thật nhất là không có câu trả lời."
       },
-      "questsGiven": ["q301"],
+      "questsGiven": [
+        "q301"
+      ],
       "shopInventory": null
     },
-
     {
       "id": "npc_garrek",
       "name": "Garrek của Cát",
@@ -170,8 +183,8 @@
       "faction": "neutral",
       "primaryLocation": "dune_village_gate",
       "locations": {
-        "arc2_exam":  "konohara_chunin_arena",
-        "arc2_post":  "konohara_outskirts_forest",
+        "arc2_exam": "konohara_chunin_arena",
+        "arc2_post": "konohara_outskirts_forest",
         "arc3_later": "dune_village_gate"
       },
       "repRequirement": {
@@ -179,15 +192,14 @@
         "post_arc2_choice_A": "neutral — không tấn công nếu player đồng cảm"
       },
       "dialogueStates": {
-        "arc2_first":   "[Không nói gì — nhìn chằm chằm]",
-        "arc2_post_A":  "Ngươi chiến đấu để bảo vệ người khác... ta chưa hiểu điều đó.",
-        "arc2_post_C":  "Ngươi im lặng. Ta tôn trọng điều đó.",
+        "arc2_first": "[Không nói gì — nhìn chằm chằm]",
+        "arc2_post_A": "Ngươi chiến đấu để bảo vệ người khác... ta chưa hiểu điều đó.",
+        "arc2_post_C": "Ngươi im lặng. Ta tôn trọng điều đó.",
         "arc3_neutral": "Làng Cát và Làng Lá đang đàm phán. Đừng gây rắc rối."
       },
       "questsGiven": [],
       "shopInventory": null
     },
-
     {
       "id": "npc_inaro",
       "name": "Inaro",
@@ -195,77 +207,133 @@
       "faction": "neutral",
       "primaryLocation": "tide_province_tazuru_house",
       "locations": {
-        "arc1":         "tide_province_tazuru_house",
-        "arc3_later":   "tide_province_bridge",
+        "arc1": "tide_province_tazuru_house",
+        "arc3_later": "tide_province_bridge",
         "arc4_tazuru_dead_quest": "konohara_gate_south"
       },
-      "repRequirement": { "village": -100, "note": "Inaro nói với tất cả" },
+      "repRequirement": {
+        "village": -100,
+        "note": "Inaro nói với tất cả"
+      },
       "dialogueStates": {
-        "arc1_cold_B":  "[Không nhìn player] ...",
-        "arc1_warm_A":  "Mày thật sự mạnh! Tao cũng muốn như vậy!",
-        "arc3_bridge":  "Cái cầu... vẫn chưa xong. Nhưng tao đang cố.",
-        "arc4_quest":   "[Nếu tazuru_dead=true] Làng của tao cần giúp đỡ. Mày... mày có thể không?"
+        "arc1_cold_B": "[Không nhìn player] ...",
+        "arc1_warm_A": "Mày thật sự mạnh! Tao cũng muốn như vậy!",
+        "arc3_bridge": "Cái cầu... vẫn chưa xong. Nhưng tao đang cố.",
+        "arc4_quest": "[Nếu tazuru_dead=true] Làng của tao cần giúp đỡ. Mày... mày có thể không?"
       },
       "questsGiven": [],
       "specialFlag": "tazuru_dead",
       "note": "Inaro là NPC trigger quest 'Nợ Chưa Trả' nếu tazuru_dead=true"
     },
-
     {
       "id": "npc_vendor_konohara_weapons",
       "name": "Tenmei — Cửa Hàng Vũ Khí Konohara",
       "type": "vendor",
       "faction": "village",
       "primaryLocation": "konohara_market_district",
-      "repRequirement": { "village": -19 },
+      "repRequirement": {
+        "village": -19
+      },
       "dialogueStates": {
-        "default":    "Chào ninja! Mày cần kunai, shuriken hay gì khác không?",
+        "default": "Chào ninja! Mày cần kunai, shuriken hay gì khác không?",
         "unfriendly": "... Mua nhanh rồi đi."
       },
       "questsGiven": [],
       "shopInventory": {
         "tier": "weapons_basic",
         "items": [
-          { "id": "kunai",    "price": 10,  "stock": 999 },
-          { "id": "shuriken", "price": 5,   "stock": 999 },
-          { "id": "senbon",   "price": 8,   "stock": 999 },
-          { "id": "explosive_tag", "price": 50, "stock": 20 }
+          {
+            "id": "kunai",
+            "price": 10,
+            "stock": 999
+          },
+          {
+            "id": "shuriken",
+            "price": 5,
+            "stock": 999
+          },
+          {
+            "id": "senbon",
+            "price": 8,
+            "stock": 999
+          },
+          {
+            "id": "explosive_tag",
+            "price": 50,
+            "stock": 20
+          }
         ]
       }
     },
-
     {
       "id": "npc_vendor_konohara_jutsu_tier1",
       "name": "Mizuki — Cửa Hàng Jutsu Scroll (Tier 1-2)",
       "type": "vendor",
       "faction": "village",
       "primaryLocation": "konohara_ninja_supply",
-      "repRequirement": { "village": 0 },
+      "repRequirement": {
+        "village": 0
+      },
       "dialogueStates": {
-        "default":   "Những scroll cơ bản nhất — dành cho genin mới.",
-        "friendly":  "Ngươi đã quen thuộc rồi — tao có thể cho xem hàng đặc biệt.",
-        "honored":   "Với danh tiếng của ngươi, tao sẽ cho discount 10%."
+        "default": "Những scroll cơ bản nhất — dành cho genin mới.",
+        "friendly": "Ngươi đã quen thuộc rồi — tao có thể cho xem hàng đặc biệt.",
+        "honored": "Với danh tiếng của ngươi, tao sẽ cho discount 10%."
       },
       "questsGiven": [],
       "shopInventory": {
         "tier": "jutsu_tier1_tier2",
-        "discountCondition": { "village": 50, "discount": 0.10 },
+        "discountCondition": {
+          "village": 50,
+          "discount": 0.1
+        },
         "items": [
-          { "id": "jutsu_f01_scroll",  "price": 500  },
-          { "id": "jutsu_f02_scroll",  "price": 500  },
-          { "id": "jutsu_w01_scroll",  "price": 500  },
-          { "id": "jutsu_e01_scroll",  "price": 500  },
-          { "id": "jutsu_e02_scroll",  "price": 500  },
-          { "id": "jutsu_wi01_scroll", "price": 500  },
-          { "id": "jutsu_l01_scroll",  "price": 500  },
-          { "id": "jutsu_n02_scroll",  "price": 500  },
-          { "id": "jutsu_f03_scroll",  "price": 1500 },
-          { "id": "jutsu_w02_scroll",  "price": 1500 },
-          { "id": "jutsu_n01_scroll",  "price": 1500 }
+          {
+            "id": "jutsu_f01_scroll",
+            "price": 500
+          },
+          {
+            "id": "jutsu_f02_scroll",
+            "price": 500
+          },
+          {
+            "id": "jutsu_w01_scroll",
+            "price": 500
+          },
+          {
+            "id": "jutsu_e01_scroll",
+            "price": 500
+          },
+          {
+            "id": "jutsu_e02_scroll",
+            "price": 500
+          },
+          {
+            "id": "jutsu_wi01_scroll",
+            "price": 500
+          },
+          {
+            "id": "jutsu_l01_scroll",
+            "price": 500
+          },
+          {
+            "id": "jutsu_n02_scroll",
+            "price": 500
+          },
+          {
+            "id": "jutsu_f03_scroll",
+            "price": 1500
+          },
+          {
+            "id": "jutsu_w02_scroll",
+            "price": 1500
+          },
+          {
+            "id": "jutsu_n01_scroll",
+            "price": 1500
+          }
         ]
       }
     },
-
     {
       "id": "npc_vendor_reimei_broker",
       "name": "???  — Môi Giới Bí Ẩn",
@@ -274,24 +342,39 @@
       "arcUnlock": 3,
       "primaryLocation": "rotating_hidden_locations",
       "locationNote": "Xuất hiện ở các điểm bí mật trong zone, thay đổi mỗi tuần",
-      "repRequirement": { "reimei": 15 },
+      "repRequirement": {
+        "reimei": 15
+      },
       "dialogueStates": {
-        "noticed":   "Reimei đang theo dõi ngươi từ lâu. Ta có hàng ngươi cần.",
+        "noticed": "Reimei đang theo dõi ngươi từ lâu. Ta có hàng ngươi cần.",
         "respected": "Ngươi đã chứng minh đủ rồi. Ta có thứ đặc biệt hơn.",
-        "default":   "[Không nói chuyện với người lạ]"
+        "default": "[Không nói chuyện với người lạ]"
       },
       "questsGiven": [],
       "shopInventory": {
         "tier": "reimei_exclusive",
         "items": [
-          { "id": "jutsu_w02_scroll", "price": 1200, "note": "Đắt hơn shop Konohara nhưng không cần village rep" },
-          { "id": "jutsu_n07_scroll", "price": 4500, "note": "Chỉ bán cho reimei rep >= 30" },
-          { "id": "reimei_cloak_cosmetic", "price": 2000 },
-          { "id": "reimei_ring_cosmetic",  "price": 3000 }
+          {
+            "id": "jutsu_w02_scroll",
+            "price": 1200,
+            "note": "Đắt hơn shop Konohara nhưng không cần village rep"
+          },
+          {
+            "id": "jutsu_n07_scroll",
+            "price": 4500,
+            "note": "Chỉ bán cho reimei rep >= 30"
+          },
+          {
+            "id": "reimei_cloak_cosmetic",
+            "price": 2000
+          },
+          {
+            "id": "reimei_ring_cosmetic",
+            "price": 3000
+          }
         ]
       }
     },
-
     {
       "id": "npc_enemy_wave_bandit",
       "name": "Tướng Cướp Tide Province",
@@ -299,22 +382,47 @@
       "faction": "neutral",
       "primaryLocation": "tide_province_forest",
       "spawnZone": "tide_province",
-      "spawnLevelRange": [1, 15],
+      "spawnLevelRange": [
+        1,
+        15
+      ],
       "stats": {
         "hp": 80,
         "attack": 12,
         "defense": 3,
         "expReward": 25,
-        "ryoReward": { "min": 10, "max": 30 }
+        "ryoReward": {
+          "min": 10,
+          "max": 30
+        }
       },
-      "skills": ["basic_attack", "throw_kunai"],
+      "skills": [
+        "basic_attack",
+        "throw_kunai"
+      ],
       "lootTable": {
-        "common": { "weight": 80, "items": ["kunai", "ryo_small"] },
-        "uncommon":{ "weight": 18, "items": ["antidote", "shuriken_x5"] },
-        "rare":    { "weight": 2,  "items": ["jutsu_f01_fragment"] }
+        "common": {
+          "weight": 80,
+          "items": [
+            "kunai",
+            "ryo_small"
+          ]
+        },
+        "uncommon": {
+          "weight": 18,
+          "items": [
+            "antidote",
+            "shuriken_x5"
+          ]
+        },
+        "rare": {
+          "weight": 2,
+          "items": [
+            "jutsu_f01_fragment"
+          ]
+        }
       }
     },
-
     {
       "id": "npc_enemy_sound_grunt",
       "name": "Lính Echo Stronghold",
@@ -322,22 +430,48 @@
       "faction": "reimei",
       "primaryLocation": "echo_stronghold_outskirts",
       "spawnZone": "echo_stronghold",
-      "spawnLevelRange": [28, 40],
+      "spawnLevelRange": [
+        28,
+        40
+      ],
       "stats": {
         "hp": 450,
         "attack": 65,
         "defense": 25,
         "expReward": 120,
-        "ryoReward": { "min": 40, "max": 100 }
+        "ryoReward": {
+          "min": 40,
+          "max": 100
+        }
       },
-      "skills": ["basic_attack", "sound_wave_basic", "throat_choke"],
+      "skills": [
+        "basic_attack",
+        "sound_wave_basic",
+        "throat_choke"
+      ],
       "lootTable": {
-        "common":  { "weight": 70, "items": ["ryo_medium", "antidote"] },
-        "uncommon":{ "weight": 25, "items": ["jutsu_wi02_fragment", "sound_material"] },
-        "rare":    { "weight": 5,  "items": ["jutsu_l02_scroll"] }
+        "common": {
+          "weight": 70,
+          "items": [
+            "ryo_medium",
+            "antidote"
+          ]
+        },
+        "uncommon": {
+          "weight": 25,
+          "items": [
+            "jutsu_wi02_fragment",
+            "sound_material"
+          ]
+        },
+        "rare": {
+          "weight": 5,
+          "items": [
+            "jutsu_l02_scroll"
+          ]
+        }
       }
     },
-
     {
       "id": "npc_anbu_contact",
       "name": "ANBU Ẩn Danh",
@@ -345,17 +479,267 @@
       "faction": "village",
       "arcUnlock": 2,
       "primaryLocation": "konohara_rooftop_hidden",
-      "repRequirement": { "village": 30 },
-      "dialogueStates": {
-        "default":   "Làng có những việc không thể nói công khai. Ngươi có muốn giúp không?",
-        "arc2_quest":"Chúng ta cần người theo dõi Sound ninja trong kỳ thi — kín đáo."
+      "repRequirement": {
+        "village": 30
       },
-      "questsGiven": ["q208_orokimaru_investigation", "q302_anbu_alternate"],
+      "dialogueStates": {
+        "default": "Làng có những việc không thể nói công khai. Ngươi có muốn giúp không?",
+        "arc2_quest": "Chúng ta cần người theo dõi Sound ninja trong kỳ thi — kín đáo."
+      },
+      "questsGiven": [
+        "q208_orokimaru_investigation",
+        "q302_anbu_alternate"
+      ],
       "shopInventory": null
+    },
+    {
+      "id": "npc_hakuren",
+      "name": "Hakuren (Shinobi Bang)",
+      "nameVi": "Hakuren (Kiếm Sĩ Sương)",
+      "type": "canon",
+      "faction": "neutral",
+      "primaryLocation": "tide_province_bridge",
+      "locations": {
+        "arc1_pre_boss": "tide_province_forest",
+        "arc1_boss": "tide_province_bridge"
+      },
+      "repRequirement": {
+        "village": -100,
+        "note": "Nói chuyện với tất cả trong Q1-07; hostile trong Q1-08"
+      },
+      "dialogueStates": {
+        "q107_encounter": "Nguoi co ai can bao ve khong? Do la suc manh that su cua ninja.",
+        "arc1_boss_phase1": "[Khong noi chuyen - dang trong trang thai chien dau]",
+        "arc1_post_death": "[Da hi sinh] Chi con ky uc ve cuoc tro chuyen trong rung."
+      },
+      "questsGiven": [
+        "q107"
+      ],
+      "shopInventory": null
+    },
+    {
+      "id": "npc_tazuru",
+      "name": "Tazuru (Tho Xay Cau)",
+      "nameVi": "Tazuru (Thợ Xây Cầu)",
+      "type": "canon",
+      "faction": "neutral",
+      "primaryLocation": "tide_province_tazuru_house",
+      "locations": {
+        "arc1": "tide_province_tazuru_house",
+        "arc1_finale": "tide_province_bridge"
+      },
+      "repRequirement": {
+        "village": -100,
+        "note": "Noi chuyen voi tat ca moi nguoi"
+      },
+      "dialogueStates": {
+        "first_meeting": "Cam on vi da den. Toi da mat hy vong vao cac ninja roi...",
+        "arc1_mid": "Cay cau nay la hi vong cua ca lang. Xin hay bao ve no.",
+        "arc1_finale": "Cam on tat ca. Toi se dat ten cay cau nay theo ten cua cac ban."
+      },
+      "questsGiven": [
+        "q109"
+      ],
+      "shopInventory": null
+    },
+    {
+      "id": "npc_enemy_demon_brother_gozu",
+      "name": "Demon Brother Gozu",
+      "type": "enemy",
+      "faction": "gato",
+      "primaryLocation": "konohara_east_forest",
+      "spawnZone": "konohara_east_forest",
+      "spawnLevelRange": [
+        3,
+        8
+      ],
+      "arcUnlock": 1,
+      "stats": {
+        "hp": 300,
+        "attack": 22,
+        "defense": 8,
+        "expReward": 80,
+        "ryoReward": {
+          "min": 30,
+          "max": 60
+        }
+      },
+      "skills": [
+        "chain_slash",
+        "poison_kunai"
+      ],
+      "lootTable": {
+        "common": {
+          "weight": 75,
+          "items": [
+            "kunai",
+            "ryo_small"
+          ]
+        },
+        "uncommon": {
+          "weight": 20,
+          "items": [
+            "antidote",
+            "shuriken_x5"
+          ]
+        },
+        "rare": {
+          "weight": 5,
+          "items": [
+            "jutsu_f01_fragment"
+          ]
+        }
+      },
+      "note": "Boss nho Q1-03. Tan cong luan phien voi Meizu; khi 1 nguoi bi ha, nguoi con lai tang toc."
+    },
+    {
+      "id": "npc_enemy_demon_brother_meizu",
+      "name": "Demon Brother Meizu",
+      "type": "enemy",
+      "faction": "gato",
+      "primaryLocation": "konohara_east_forest",
+      "spawnZone": "konohara_east_forest",
+      "spawnLevelRange": [
+        3,
+        8
+      ],
+      "arcUnlock": 1,
+      "stats": {
+        "hp": 300,
+        "attack": 22,
+        "defense": 8,
+        "expReward": 80,
+        "ryoReward": {
+          "min": 30,
+          "max": 60
+        }
+      },
+      "skills": [
+        "chain_slash",
+        "poison_kunai"
+      ],
+      "lootTable": {
+        "common": {
+          "weight": 75,
+          "items": [
+            "kunai",
+            "ryo_small"
+          ]
+        },
+        "uncommon": {
+          "weight": 20,
+          "items": [
+            "antidote",
+            "shuriken_x5"
+          ]
+        },
+        "rare": {
+          "weight": 5,
+          "items": [
+            "jutsu_f01_fragment"
+          ]
+        }
+      },
+      "note": "Boss nho Q1-03. Tan cong luan phien voi Gozu; khi 1 nguoi bi ha, nguoi con lai tang toc."
+    },
+    {
+      "id": "npc_enemy_zaborax_water_clone",
+      "name": "Zaborax's Water Clone",
+      "type": "enemy",
+      "faction": "gato",
+      "primaryLocation": "tide_province_forest_lake",
+      "spawnZone": "tide_province",
+      "spawnLevelRange": [
+        6,
+        12
+      ],
+      "arcUnlock": 1,
+      "stats": {
+        "hp": 150,
+        "attack": 28,
+        "defense": 5,
+        "expReward": 40,
+        "ryoReward": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "skills": [
+        "water_whip",
+        "mist_concealment"
+      ],
+      "lootTable": {
+        "common": {
+          "weight": 85,
+          "items": [
+            "ryo_small"
+          ]
+        },
+        "uncommon": {
+          "weight": 15,
+          "items": [
+            "antidote"
+          ]
+        },
+        "rare": {
+          "weight": 0,
+          "items": []
+        }
+      },
+      "note": "Phan than nuoc cua Zaborax trong Q1-05. Spawn 4 con; can tieu diet dong thoi de stop respawn."
+    },
+    {
+      "id": "npc_enemy_kiri_rogue",
+      "name": "Kiri Rogue Ninja",
+      "type": "enemy",
+      "faction": "neutral",
+      "primaryLocation": "tide_province_forest_cave",
+      "spawnZone": "tide_province",
+      "spawnLevelRange": [
+        8,
+        14
+      ],
+      "arcUnlock": 1,
+      "stats": {
+        "hp": 220,
+        "attack": 32,
+        "defense": 12,
+        "expReward": 120,
+        "ryoReward": {
+          "min": 40,
+          "max": 80
+        }
+      },
+      "skills": [
+        "basic_attack",
+        "water_whip",
+        "mist_escape"
+      ],
+      "lootTable": {
+        "common": {
+          "weight": 70,
+          "items": [
+            "kunai",
+            "ryo_small"
+          ]
+        },
+        "uncommon": {
+          "weight": 25,
+          "items": [
+            "antidote",
+            "shuriken_x5"
+          ]
+        },
+        "rare": {
+          "weight": 5,
+          "items": [
+            "jutsu_w01_scroll"
+          ]
+        }
+      },
+      "note": "Ninja vuot bo tu Kirigakure trong hidden quest qh101. 3 con."
     }
-
   ],
-
   "locationDirectory": {
     "konohara_hub": {
       "label": "Làng Lá — Konohara",
@@ -370,26 +754,37 @@
         "konohara_gate_south",
         "konohara_gate_west",
         "konohara_rooftop",
-        "konohara_ramen_shop"
+        "konohara_ramen_shop",
+        "konohara_east_forest"
       ]
     },
     "tide_province": {
       "label": "Đất Sóng — Tide Province",
       "type": "pvp_zone",
       "arcUnlock": 1,
-      "levelRange": [1, 15],
+      "levelRange": [
+        1,
+        15
+      ],
       "subLocations": [
         "tide_province_forest",
         "tide_province_tazuru_house",
         "tide_province_bridge",
-        "tide_province_port"
+        "tide_province_port",
+        "tide_province_coast",
+        "tide_province_forest_lake",
+        "tide_province_village",
+        "tide_province_forest_cave"
       ]
     },
     "chunin_zone": {
       "label": "Khu Thi Chunin",
       "type": "pvp_zone",
       "arcUnlock": 2,
-      "levelRange": [15, 30],
+      "levelRange": [
+        15,
+        30
+      ],
       "subLocations": [
         "chunin_exam_building",
         "forest_of_death",
@@ -400,7 +795,10 @@
       "label": "Làng Âm Thanh — Echo Stronghold",
       "type": "pvp_zone",
       "arcUnlock": 3,
-      "levelRange": [28, 40],
+      "levelRange": [
+        28,
+        40
+      ],
       "subLocations": [
         "echo_stronghold_outskirts",
         "echo_stronghold_inner",
@@ -411,7 +809,10 @@
       "label": "Vùng Tìm Tsukade",
       "type": "pvp_zone",
       "arcUnlock": 4,
-      "levelRange": [40, 50],
+      "levelRange": [
+        40,
+        50
+      ],
       "subLocations": [
         "western_road_traveling",
         "western_town_bar",
@@ -448,7 +849,9 @@
       "label": "Mái Nhà Bí Mật — Konohara",
       "type": "safe_zone",
       "arcUnlock": 1,
-      "repRequirement": { "village": 30 },
+      "repRequirement": {
+        "village": 30
+      },
       "note": "Điểm gặp NPC questGiver ẩn — mở khi village rep >= 30. Có thể đạt trong Arc 1."
     },
     "rotating_hidden_locations": {

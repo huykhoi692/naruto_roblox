@@ -10,7 +10,7 @@
       "arc": 1,
       "levelRequired": 1,
       "questGiver": "npc_kakashi",
-      "location": "konohara_training_ground",
+      "location": "konohara_training_ground_7",
       "type": "main",
       "prerequisiteQuests": [],
       "tasks": [
@@ -53,7 +53,7 @@
       "nameVi": "Nhiệm Vụ C-Rank Đầu Tiên",
       "arc": 1,
       "levelRequired": 2,
-      "questGiver": "npc_hokage_third",
+      "questGiver": "npc_hokage3",
       "location": "konohara_hokage_office",
       "type": "main",
       "prerequisiteQuests": [
@@ -97,8 +97,8 @@
           "type": "combat",
           "desc": "Đánh bại Demon Brothers (Gozu & Meizu)",
           "enemyIds": [
-            "enemy_demon_brother_gozu",
-            "enemy_demon_brother_meizu"
+            "npc_enemy_demon_brother_gozu",
+            "npc_enemy_demon_brother_meizu"
           ]
         },
         {
@@ -110,10 +110,7 @@
       "rewards": {
         "exp": 500,
         "ryo": 100,
-        "items": [],
-        "repEffects": {
-          "village": 15
-        }
+        "items": []
       },
       "choicePoints": [
         {
@@ -224,16 +221,14 @@
       "questGiver": "npc_kakashi",
       "location": "tide_province_forest_lake",
       "type": "main",
-      "prerequisiteQuests": [
-        "q104"
-      ],
+      "prerequisiteQuests": [],
       "tasks": [
         {
           "id": "t1",
           "type": "combat_wave",
           "desc": "Đánh bại 4 Water Clone của Zaborax đồng thời để stop respawn",
           "enemyIds": [
-            "enemy_zaborax_water_clone"
+            "npc_enemy_zaborax_water_clone"
           ]
         },
         {
@@ -273,7 +268,11 @@
       "unlockJutsu": [
         "jutsu_w01"
       ],
-      "nextQuest": "q106"
+      "nextQuest": "q106",
+      "prerequisiteQuestsAny": [
+        "q104",
+        "q104b"
+      ]
     },
     {
       "id": "q106",
@@ -559,7 +558,7 @@
           "type": "combat",
           "desc": "Đánh bại 3 Kiri Rogue Ninja",
           "enemyIds": [
-            "enemy_kiri_rogue"
+            "npc_enemy_kiri_rogue"
           ]
         },
         {
