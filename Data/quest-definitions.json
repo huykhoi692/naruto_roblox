@@ -1,0 +1,616 @@
+{
+  "version": "1.0.0",
+  "arc": 1,
+  "note": "Quest definitions cho Arc 1 - Wave Country (level 1-15). Quest ID format: q1XX (main), qh1XX (hidden).",
+  "quests": [
+    {
+      "id": "q101",
+      "name": "Ngay Dau Lam Genin",
+      "nameVi": "Ngày Đầu Làm Genin",
+      "arc": 1,
+      "levelRequired": 1,
+      "questGiver": "npc_kakashi",
+      "location": "konohara_training_ground",
+      "type": "main",
+      "prerequisiteQuests": [],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "minigame",
+          "desc": "Hoàn thành bài tập ném kunai"
+        },
+        {
+          "id": "t2",
+          "type": "action",
+          "desc": "Thực hiện đúng 3 hand seal cơ bản (tutorial chakra)"
+        },
+        {
+          "id": "t3",
+          "type": "talk",
+          "desc": "Nói chuyện với Naruko, Sazuki, Sakuri"
+        }
+      ],
+      "rewards": {
+        "exp": 200,
+        "ryo": 0,
+        "items": [
+          {
+            "itemId": "kunai",
+            "amount": 5
+          },
+          {
+            "itemId": "shuriken_x10",
+            "amount": 1
+          }
+        ]
+      },
+      "choicePoints": [],
+      "nextQuest": "q102"
+    },
+    {
+      "id": "q102",
+      "name": "Nhiem Vu C-Rank Dau Tien",
+      "nameVi": "Nhiệm Vụ C-Rank Đầu Tiên",
+      "arc": 1,
+      "levelRequired": 2,
+      "questGiver": "npc_hokage_third",
+      "location": "konohara_hokage_office",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q101"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "travel",
+          "desc": "Đi cùng đoàn qua 3 checkpoint"
+        },
+        {
+          "id": "t2",
+          "type": "dialogue",
+          "desc": "Nghe Tazuru kể chuyện Tide Province"
+        }
+      ],
+      "rewards": {
+        "exp": 300,
+        "ryo": 0,
+        "items": []
+      },
+      "choicePoints": [],
+      "nextQuest": "q103"
+    },
+    {
+      "id": "q103",
+      "name": "Phuc Kich Tren Duong",
+      "nameVi": "Phục Kích Trên Đường",
+      "arc": 1,
+      "levelRequired": 3,
+      "questGiver": "npc_kakashi",
+      "location": "konohara_east_forest",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q102"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "combat",
+          "desc": "Đánh bại Demon Brothers (Gozu & Meizu)",
+          "enemyIds": [
+            "enemy_demon_brother_gozu",
+            "enemy_demon_brother_meizu"
+          ]
+        },
+        {
+          "id": "t2",
+          "type": "protect",
+          "desc": "Giữ Tazuru trên 50% HP"
+        }
+      ],
+      "rewards": {
+        "exp": 500,
+        "ryo": 100,
+        "items": [],
+        "repEffects": {
+          "village": 15
+        }
+      },
+      "choicePoints": [
+        {
+          "id": "cp1",
+          "trigger": "combat_start",
+          "promptText": "Nhiệm vụ này đã vượt C-Rank. Chúng ta có thể rút lui.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Chiến đấu",
+              "effects": {
+                "village_rep": 15,
+                "exp_bonus": 10
+              },
+              "nextQuest": "q104"
+            },
+            {
+              "id": "B",
+              "text": "Rút lui",
+              "effects": {
+                "village_rep": -20
+              },
+              "nextQuest": "q104b",
+              "flag": "tazuru_injured"
+            }
+          ]
+        }
+      ],
+      "unlockJutsu": [
+        "jutsu_f01"
+      ],
+      "nextQuest": "q104"
+    },
+    {
+      "id": "q104",
+      "name": "Suong Mu Day Dac",
+      "nameVi": "Sương Mù Dày Đặc",
+      "arc": 1,
+      "levelRequired": 5,
+      "questGiver": "npc_kakashi",
+      "location": "tide_province_coast",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q103"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "escort",
+          "desc": "Hộ tống Tazuru qua bản đồ sương mù (tầm nhìn -60%)"
+        },
+        {
+          "id": "t2",
+          "type": "skillCheck",
+          "desc": "Phát hiện Zaborax trước khi hắn tấn công (Perception check)"
+        }
+      ],
+      "rewards": {
+        "exp": 400,
+        "ryo": 0,
+        "items": []
+      },
+      "choicePoints": [],
+      "nextQuest": "q105"
+    },
+    {
+      "id": "q104b",
+      "name": "Suong Mu Day Dac (Nhanh Rut Lui)",
+      "nameVi": "Sương Mù Dày Đặc (Nhánh Rút Lui)",
+      "arc": 1,
+      "levelRequired": 5,
+      "questGiver": "npc_kakashi",
+      "location": "tide_province_coast",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q103"
+      ],
+      "branchOf": "q104",
+      "conditions": [
+        "q103_choice_B"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "escort",
+          "desc": "Hộ tống Tazuru bị thương (tốc độ di chuyển -20%)"
+        }
+      ],
+      "rewards": {
+        "exp": 300,
+        "ryo": 0,
+        "items": []
+      },
+      "repEffects": {
+        "village": -10
+      },
+      "modifiers": {
+        "boss_zaborax_hp_bonus": 0.2
+      },
+      "nextQuest": "q105"
+    },
+    {
+      "id": "q105",
+      "name": "Tran Dau Voi Zaborax",
+      "nameVi": "Trận Đầu Với Zaborax",
+      "arc": 1,
+      "levelRequired": 6,
+      "questGiver": "npc_kakashi",
+      "location": "tide_province_forest_lake",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q104"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "combat_wave",
+          "desc": "Đánh bại 4 Water Clone của Zaborax đồng thời để stop respawn",
+          "enemyIds": [
+            "enemy_zaborax_water_clone"
+          ]
+        },
+        {
+          "id": "t2",
+          "type": "survive",
+          "desc": "Giữ Tazuru sống trong 3 phút"
+        }
+      ],
+      "rewards": {
+        "exp": 800,
+        "ryo": 0,
+        "items": []
+      },
+      "choicePoints": [
+        {
+          "id": "cp2",
+          "trigger": "hakuren_appears",
+          "promptText": "Hakuren đội mặt nạ xuất hiện và bắn kim vào Zaborax. Thực ra là để Zaborax nghỉ hồi phục.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Tin tưởng — để Hakuren rời đi",
+              "effects": {},
+              "flag": "hakuren_trusted"
+            },
+            {
+              "id": "B",
+              "text": "Truy đuổi Hakuren",
+              "effects": {
+                "combat_result": "forced_lose"
+              },
+              "flag": "hakuren_face_seen"
+            }
+          ]
+        }
+      ],
+      "unlockJutsu": [
+        "jutsu_w01"
+      ],
+      "nextQuest": "q106"
+    },
+    {
+      "id": "q106",
+      "name": "Song Trong Lang Wave",
+      "nameVi": "Sống Trong Làng Wave",
+      "arc": 1,
+      "levelRequired": 8,
+      "questGiver": "npc_kakashi",
+      "location": "tide_province_village",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q105"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "dialogue",
+          "desc": "Nói chuyện với Inaro — unlock lore Kaiza"
+        },
+        {
+          "id": "t2",
+          "type": "minigame",
+          "desc": "Leo cây không có ninja tool (Chakra Control)"
+        },
+        {
+          "id": "t3",
+          "type": "explore",
+          "desc": "Tìm vị trí bí mật trong rừng",
+          "triggerHiddenQuest": "qh101"
+        }
+      ],
+      "rewards": {
+        "exp": 600,
+        "ryo": 0,
+        "items": [],
+        "permanent": {
+          "stat": "maxChakra",
+          "bonus": 5
+        }
+      },
+      "choicePoints": [
+        {
+          "id": "cp3",
+          "trigger": "inaro_bullied_event",
+          "promptText": "Bọn lính của Gato đang bắt nạt dân làng ở chợ.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Can thiệp",
+              "effects": {
+                "village_rep": 20,
+                "wave_rep": 10
+              },
+              "flag": "inaro_respect"
+            },
+            {
+              "id": "B",
+              "text": "Bỏ qua",
+              "effects": {},
+              "flag": "inaro_disdain"
+            },
+            {
+              "id": "C",
+              "text": "Mặc cả với lính",
+              "effects": {
+                "village_rep": -30,
+                "reimei_intel": 10
+              },
+              "modifiers": {
+                "boss_zaborax_difficulty": "increased"
+              }
+            }
+          ]
+        }
+      ],
+      "nextQuest": "q107"
+    },
+    {
+      "id": "q107",
+      "name": "Dem Truoc Tran Cuoi",
+      "nameVi": "Đêm Trước Trận Cuối",
+      "arc": 1,
+      "levelRequired": 10,
+      "questGiver": "npc_hakuren",
+      "location": "tide_province_forest",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q106"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "dialogue",
+          "desc": "Nói chuyện với người lạ (Hakuren không đội mặt nạ)"
+        }
+      ],
+      "rewards": {
+        "exp": 0,
+        "ryo": 0,
+        "items": []
+      },
+      "choicePoints": [
+        {
+          "id": "cp4",
+          "trigger": "hakuren_question",
+          "promptText": "Hakuren: Ngươi có người quan trọng cần bảo vệ không?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Có — đó là lý do tôi chiến đấu",
+              "effects": {
+                "buff": "nguoi_quan_trong_10pct"
+              }
+            },
+            {
+              "id": "B",
+              "text": "Tôi chiến đấu cho chính mình",
+              "effects": {}
+            },
+            {
+              "id": "C",
+              "text": "Tôi không cần lý do",
+              "effects": {},
+              "flag": "reimei_recruitment_eligible"
+            }
+          ]
+        }
+      ],
+      "nextQuest": "q108"
+    },
+    {
+      "id": "q108",
+      "name": "Tran Cau",
+      "nameVi": "Trận Cầu",
+      "arc": 1,
+      "levelRequired": 12,
+      "questGiver": "npc_kakashi",
+      "location": "tide_province_bridge",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q107"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "boss",
+          "desc": "Phase 1: Đánh Hakuren trong Crystal Ice Mirrors dungeon",
+          "bossId": "hakuren"
+        },
+        {
+          "id": "t2",
+          "type": "boss_assist",
+          "desc": "Phase 2: Hỗ trợ Kakashi chống Zaborax (damage check)",
+          "bossId": "zaborax"
+        },
+        {
+          "id": "t3",
+          "type": "scripted",
+          "desc": "Phase 3: Gato phản bội — sự kiện dân làng nổi dậy"
+        }
+      ],
+      "rewards": {
+        "exp": 0,
+        "ryo": 0,
+        "items": []
+      },
+      "choicePoints": [
+        {
+          "id": "cp5",
+          "trigger": "zaborax_defeated",
+          "promptText": "Zaborax giết Gato, gục ngã bên cạnh Hakuren.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Để yên",
+              "effects": {
+                "village_rep": 10
+              }
+            },
+            {
+              "id": "B",
+              "text": "Nói lời cuối với Zaborax",
+              "effects": {
+                "insight_point_reward": 5
+              },
+              "consequence": "Unlock lore Zaborax + Hakuren"
+            },
+            {
+              "id": "C",
+              "text": "Lấy Kubikiribocho",
+              "effects": {
+                "village_rep": -15
+              },
+              "itemReward": "kubikiribocho_fragment",
+              "flag": "kubikiribocho_taken"
+            }
+          ]
+        }
+      ],
+      "nextQuest": "q109"
+    },
+    {
+      "id": "q109",
+      "name": "Cau Hoan Thanh",
+      "nameVi": "Cầu Hoàn Thành",
+      "arc": 1,
+      "levelRequired": 14,
+      "questGiver": "npc_tazuru",
+      "location": "tide_province_bridge",
+      "type": "main",
+      "prerequisiteQuests": [
+        "q108"
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "dialogue",
+          "desc": "Nói chuyện với Inaro lần cuối"
+        },
+        {
+          "id": "t2",
+          "type": "dialogue",
+          "desc": "Nhận phần thưởng từ Tazuru"
+        }
+      ],
+      "rewards": {
+        "exp": 1000,
+        "ryo": 500,
+        "items": [
+          {
+            "itemId": "wave_ribbon_cosmetic",
+            "amount": 1
+          },
+          {
+            "itemId": "arc1_completion_badge",
+            "amount": 1
+          }
+        ]
+      },
+      "choicePoints": [
+        {
+          "id": "cp6",
+          "trigger": "inaro_aspiration",
+          "promptText": "Inaro hỏi: Tôi có thể trở thành ninja không?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Được — nếu cậu quyết tâm",
+              "effects": {},
+              "flag": "inaro_ninja_arc2"
+            },
+            {
+              "id": "B",
+              "text": "Ninja không phải cho tất cả",
+              "effects": {},
+              "flag": "inaro_ninja_arc3"
+            }
+          ]
+        }
+      ],
+      "isArcComplete": true,
+      "nextQuest": null
+    },
+    {
+      "id": "qh101",
+      "name": "Kho Bau Trong Rung",
+      "nameVi": "Kho Báu Trong Rừng",
+      "arc": 1,
+      "levelRequired": 8,
+      "questGiver": null,
+      "location": "tide_province_forest_cave",
+      "type": "hidden",
+      "trigger": {
+        "type": "explore",
+        "parentQuest": "q106",
+        "taskId": "t3",
+        "condition": "perception >= 15 OR hasJutsu:detection"
+      },
+      "prerequisiteQuests": [],
+      "tasks": [
+        {
+          "id": "t1",
+          "type": "combat",
+          "desc": "Đánh bại 3 Kiri Rogue Ninja",
+          "enemyIds": [
+            "enemy_kiri_rogue"
+          ]
+        },
+        {
+          "id": "t2",
+          "type": "choice",
+          "desc": "Đọc scroll — chọn học hay đốt"
+        }
+      ],
+      "rewards": {
+        "exp": 1500,
+        "ryo": 0,
+        "items": [
+          {
+            "itemId": "kirigakure_map",
+            "amount": 1
+          }
+        ]
+      },
+      "choicePoints": [
+        {
+          "id": "hq_cp1",
+          "trigger": "scroll_found",
+          "promptText": "Scroll jutsu bị cấm của Kirigakure — học hay tiêu hủy?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Học jutsu",
+              "effects": {
+                "village_rep": -10
+              },
+              "unlockJutsu": [
+                "jutsu_w02"
+              ]
+            },
+            {
+              "id": "B",
+              "text": "Nộp scroll về Konohara",
+              "effects": {
+                "village_rep": 15,
+                "ryo_reward": 200
+              }
+            },
+            {
+              "id": "C",
+              "text": "Đốt scroll",
+              "effects": {},
+              "flag": "forbidden_scroll_burned"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

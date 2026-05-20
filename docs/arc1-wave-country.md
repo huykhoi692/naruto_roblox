@@ -183,7 +183,7 @@ Arc đầu tiên. Người chơi vừa tốt nghiệp Học Viện Ninja, đư�
 - Xuất hiện mechanic mới: *Sacrifice* — Hakuren lao vào đỡ đòn cho Zaborax (heal Zaborax 6% maxHP Zaborax)
 - Nếu player đã chọn [A] ở Q1-07: Hakuren có 20% chance không dùng Sacrifice
 
-**Loot Hakuren:** 3,000 EXP, "Băng Châm" accessory (+5% Chakra Regen), Hakuren's Mask (cosmetic)
+**Loot Hakuren:** 3,000 EXP, "Băng Châm" accessory (cosmetic), Hakuren's Mask (cosmetic)
 
 ---
 
@@ -266,8 +266,6 @@ Người chơi có thể học các jutsu sau khi hoàn thành arc (cần SP và
 | Water Whip | 1 | Nước | Hoàn thành Q1-05 |
 | Phantom Mist Technique | 2 | Nước | Hidden Quest [A] |
 | Spirit Double Basic | 2 | Không hệ | Hoàn thành Q1-08 |
-| Ice Needle (Hakuren's) | 3 | Nước+Gió | Drop từ Hakuren (học qua scroll, cần cả 2 hệ) |
-| Water Dragon Jutsu | 3 | Nước | Học từ Zaborax's scroll (item drop hiếm) |
 
 ---
 

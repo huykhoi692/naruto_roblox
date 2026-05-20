@@ -271,6 +271,7 @@
       "name": "???  — Môi Giới Bí Ẩn",
       "type": "vendor",
       "faction": "reimei",
+      "arcUnlock": 3,
       "primaryLocation": "rotating_hidden_locations",
       "locationNote": "Xuất hiện ở các điểm bí mật trong zone, thay đổi mỗi tuần",
       "repRequirement": { "reimei": 15 },
@@ -342,6 +343,7 @@
       "name": "ANBU Ẩn Danh",
       "type": "questGiver",
       "faction": "village",
+      "arcUnlock": 2,
       "primaryLocation": "konohara_rooftop_hidden",
       "repRequirement": { "village": 30 },
       "dialogueStates": {
@@ -451,8 +453,9 @@
     },
     "rotating_hidden_locations": {
       "label": "Diem Bi Mat Luan Phien",
+      "nameVi": "Điểm Bí Mật Luân Phiên",
       "type": "dynamic",
-      "note": "Location dac biet - Reimei Broker xuat hien o cac diem bi mat thay doi moi tuan. Vi tri resolve runtime boi NPCSpawner."
+      "note": "Location đặc biệt — Reimei Broker xuất hiện ở các điểm bí mật thay đổi mỗi tuần. Vị trí cụ thể được xác định bởi game server, không hardcode."
     }
   }
 }
