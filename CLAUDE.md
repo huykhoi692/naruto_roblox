@@ -27,8 +27,8 @@ Do NOT write any code if the validator has errors.
 |-------|--------|--------|
 | 1 | DataLoader + ConfigLoader | Done |
 | 2 | PlayerSystem | Done |
-| 3 | ChakraAffinity | Done (untracked) |
-| 4 | JutsuSystem | NEXT |
+| 3 | ChakraAffinity | Done |
+| 4 | JutsuSystem | Done |
 
 ## Step 5 — Rules that are never optional
 1. Run validator before coding.
@@ -39,6 +39,47 @@ Do NOT write any code if the validator has errors.
 
 ---
 <!-- END CLAUDE INSTRUCTIONS -->
+
+## Quick Start (TL;DR)
+```
+1. Read .claude/skills/naruto-roblox-dev/SKILL.md
+2. git status
+3. python tools/validate-data.py   ← 0 errors required before any code
+4. Follow phase-based workflow in SKILL.md Section E
+5. Do NOT git push/pull unless explicitly requested
+```
+
+## GameData Runtime Setup (Roblox Studio)
+
+`DataLoader.lua` requires a **Folder** named `GameData` inside `ReplicatedStorage`, containing one `StringValue` per JSON file:
+
+```
+ReplicatedStorage
+  GameData (Folder)
+    balance-config    (StringValue)  ← paste contents of Data/balance-config.json
+    clan-data         (StringValue)  ← paste contents of Data/clan-data.json
+    jutsu-definitions (StringValue)  ← paste contents of Data/jutsu-definitions.json
+    item-definitions  (StringValue)  ← paste contents of Data/item-definitions.json
+    npc-data          (StringValue)  ← paste contents of Data/npc-data.json
+    quest-definitions (StringValue)  ← paste contents of Data/quest-definitions.json
+```
+
+**Manual setup (current v0.1 workflow):**
+1. In Studio, create a `Folder` named `GameData` under `ReplicatedStorage`.
+2. For each JSON file in `Data/`, create a `StringValue` with the matching name (no `.json` extension).
+3. Paste the full JSON text into `.Value` of each `StringValue`.
+4. Re-paste whenever a `Data/*.json` file changes.
+
+**Future automation (proposed — do NOT implement yet):**
+`tools/generate-gamedata.lua` or `tools/export-to-studio.py` — a script that reads `Data/*.json`
+and generates a Roblox model file (`.rbxmx`) that can be drag-dropped into Studio to replace
+all `StringValues` at once. Implement in Phase 8+ when data changes become frequent.
+
+**Note:** With Rojo (`default.project.json`), `src/Shared` and `src/Server/Systems` sync automatically.
+`Data/*.json` → `GameData` StringValues does **not** sync via Rojo — manual paste required until
+the generate script is built.
+
+---
 
 # Naruko Roblox Game — Ý Tưởng & Vision
 

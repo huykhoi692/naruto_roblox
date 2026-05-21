@@ -161,11 +161,10 @@ Then read the files relevant to the phase. Then write a short summary:
 
 ---
 
-### Phase 3 — ChakraAffinity (DONE — untracked in git)
+### Phase 3 — ChakraAffinity (DONE)
 
 **File:** `src/Shared/ChakraAffinity.lua`
 
-**Status:** File exists, not yet committed. Include in Phase 4 commit or commit standalone.
 
 **Review checklist:**
 - `isValidAffinity(affinity)` — only accepts the 5 valid elements
@@ -178,7 +177,7 @@ Then read the files relevant to the phase. Then write a short summary:
 
 ---
 
-### Phase 4 — JutsuSystem (NEXT)
+### Phase 4 — JutsuSystem (DONE)
 
 **File:** `src/Server/Systems/JutsuSystem.lua`
 
@@ -421,7 +420,7 @@ Handoff — Naruto Roblox Project
 Read first: .claude/skills/naruto-roblox-dev/SKILL.md
 
 Current state:
-- Phases done: 1 (DataLoader/ConfigLoader), 2 (PlayerSystem), 3 (ChakraAffinity)
+- Phases done: 1 (DataLoader/ConfigLoader), 2 (PlayerSystem), 3 (ChakraAffinity), 4 (JutsuSystem)
 - Next phase: [N] — [SystemName]
 - Last validator: 0 errors, 0 warnings
 - Untracked/modified files: [git status output]
@@ -455,8 +454,8 @@ A phase is DONE only when ALL of the following are true:
 |-------|--------|--------|
 | 1 | DataLoader + ConfigLoader | Done |
 | 2 | PlayerSystem | Done |
-| 3 | ChakraAffinity | Done (untracked) |
-| 4 | JutsuSystem | NEXT |
+| 3 | ChakraAffinity | Done |
+| 4 | JutsuSystem | Done |
 | 5 | ClanSystem | Pending |
 | 6 | CombatCalculator | Pending |
 | 7 | ItemRegistry + InventorySystem | Pending |
@@ -466,4 +465,4 @@ A phase is DONE only when ALL of the following are true:
 
 ---
 
-*Last updated: 2026-05-21 | Validator: 0 errors, 0 warnings | Branch: main*
+*Last updated: 2026-05-21 | Validator: 0 errors, 0 warnings | Branch: main | Phases done: 1-4*
