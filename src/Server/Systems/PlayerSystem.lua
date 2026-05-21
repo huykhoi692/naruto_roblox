@@ -92,6 +92,7 @@ local function newProfile()
 			maxChakra = 0,
 			attack    = 0,
 			defense   = 0,
+			speed     = 0,  -- Phase 3+: quest/passive có thể cộng bonus tốc độ
 		},
 
 		-- Arc hiện tại (1–4)
@@ -133,7 +134,10 @@ local function _doLevelUp(profile)
 
 		-- Cộng SP từ ConfigLoader
 		local spGain = ConfigLoader.getSPPerLevel()
-		-- No-clan bonus SP: chỉ cộng khi đang là no-clan
+		-- No-clan bonus SP: +1 SP/level, áp dụng từ level 1 đến level 30 (noClanBonusSPCap)
+		-- Intentional: bắt đầu từ level 1 (không phải 2) vì level up đầu tiên là từ lv1→lv2,
+		-- tức là profile.level đã = 2 khi check — nhưng initCharacter cộng bonus lv1 thủ công.
+		-- Tổng max bonus no-clan = noClanBonusSP * noClanBonusSPCap = 1 * 30 = 30 SP (level 1–30).
 		if profile.clanId == "clan_none" then
 			spGain = spGain + ConfigLoader.getNoClanBonusSP(profile.level)
 		end
@@ -293,6 +297,20 @@ function PlayerSystem.initCharacter(player, characterData)
 		return false
 	end
 
+	-- Validate chakraAffinity phải là một trong 5 hệ hợp lệ
+	-- "none" và "playerChoice" KHÔNG được phép — affinity phải là hệ thực sự
+	local VALID_AFFINITIES = {
+		fire      = true,
+		water     = true,
+		earth     = true,
+		wind      = true,
+		lightning = true,
+	}
+	if not VALID_AFFINITIES[characterData.chakraAffinity] then
+		warn("[PlayerSystem] initCharacter: chakraAffinity không hợp lệ:", characterData.chakraAffinity)
+		return false
+	end
+
 	-- Validate clanId tồn tại trong data
 	local clanData = DataLoader.getClanById(characterData.clanId)
 	if not clanData then
@@ -328,7 +346,7 @@ end
 
 -- Lấy stats hiện tại của player (sau khi áp modifiers và buffs)
 -- Trả về table hoặc nil nếu chưa có profile
--- Stats: maxHP, maxChakra, attack, defense, level, currentHP, currentChakra
+-- Stats: maxHP, maxChakra, attack, defense, speed, level, currentHP, currentChakra
 function PlayerSystem.getStats(player)
 	local profile = _profiles[player]
 	if not profile then return nil end
@@ -342,6 +360,7 @@ function PlayerSystem.getStats(player)
 		maxChakra  = calcMaxChakra(profile),
 		attack     = ConfigLoader.calcAttack(profile.level)  + profile.permanentBonuses.attack,
 		defense    = ConfigLoader.calcDefense(profile.level) + profile.permanentBonuses.defense,
+		speed      = ConfigLoader.calcSpeed()                + profile.permanentBonuses.speed,
 		level      = profile.level,
 		currentHP  = profile.currentHP,
 		currentChakra = profile.currentChakra,
@@ -358,8 +377,12 @@ function PlayerSystem.getStats(player)
 	end
 
 	-- Clamp currentHP/Chakra không vượt max (buffs có thể thay đổi max)
-	stats.currentHP    = math.min(stats.currentHP,    stats.maxHP)
+	stats.currentHP     = math.min(stats.currentHP,     stats.maxHP)
 	stats.currentChakra = math.min(stats.currentChakra, stats.maxChakra)
+
+	-- Ghi ngược clamp về profile để profile không bị stale
+	profile.currentHP     = stats.currentHP
+	profile.currentChakra = stats.currentChakra
 
 	return stats
 end

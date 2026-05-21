@@ -64,6 +64,14 @@ function ConfigLoader.calcDefense(level)
 	return (ps.baseDefense or 5) + (ps.defensePerLevel or 1.2) * level
 end
 
+-- Tính tốc độ di chuyển (studs/giây)
+-- Speed không scale theo level — baseSpeed là hằng số (16 studs/s = mặc định Roblox)
+-- Buff/quest có thể cộng thêm qua permanentBonuses.speed
+function ConfigLoader.calcSpeed()
+	local ps = ConfigLoader.getPlayerStatConfig()
+	return ps.baseSpeed or 16
+end
+
 -- Max level của game
 function ConfigLoader.getMaxLevel()
 	local ps = ConfigLoader.getPlayerStatConfig()
