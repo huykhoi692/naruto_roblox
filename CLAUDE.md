@@ -1,3 +1,45 @@
+<!-- CLAUDE INSTRUCTIONS — READ THIS FIRST -->
+# Claude Entry Point
+
+> This file is the entry point for every Claude thread working on this project.
+> Do not skip the steps below — they prevent scope drift and data corruption.
+
+## Step 1 — Load the skill
+Read: `.claude/skills/naruto-roblox-dev/SKILL.md`
+
+That file contains the full project context, architecture, non-negotiable rules, phase specs, and reusable prompts.
+
+## Step 2 — Run preflight
+```bash
+git status
+python tools/validate-data.py
+```
+Do NOT write any code if the validator has errors.
+
+## Step 3 — Respect v0.1 scope
+- Arc 1 (Tide Province, levels 1–15) only.
+- Tier 1–2 jutsu only (`maxLearnableTier = 2` in balance-config).
+- No Tier 3–5, no Arc 2/3/4 content, no Faction War, no Events, no Monetization.
+- Check `.claude/skills/naruto-roblox-dev/checklists/v01-scope-guard.md` when in doubt.
+
+## Step 4 — Current phase status
+| Phase | System | Status |
+|-------|--------|--------|
+| 1 | DataLoader + ConfigLoader | Done |
+| 2 | PlayerSystem | Done |
+| 3 | ChakraAffinity | Done (untracked) |
+| 4 | JutsuSystem | NEXT |
+
+## Step 5 — Rules that are never optional
+1. Run validator before coding.
+2. No hardcoded balance numbers — use ConfigLoader.
+3. No GitHub push/pull unless the user explicitly asks.
+4. Data/*.json is source of truth — do not modify without user approval.
+5. Report files changed + validator result after every phase.
+
+---
+<!-- END CLAUDE INSTRUCTIONS -->
+
 # Naruko Roblox Game — Ý Tưởng & Vision
 
 ## Game Là Gì
