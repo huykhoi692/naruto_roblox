@@ -493,7 +493,7 @@ end
 -- ============================================================
 
 -- Cộng permanent stat bonus (từ quest reward, special event)
--- statKey: "maxHP" | "maxChakra" | "attack" | "defense"
+-- statKey: "maxHP" | "maxChakra" | "attack" | "defense" | "speed"
 function PlayerSystem.addPermanentBonus(player, statKey, amount)
 	local profile = _profiles[player]
 	if not profile then return end

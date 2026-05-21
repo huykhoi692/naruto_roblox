@@ -90,7 +90,9 @@
       "tier5": 20
     },
     "affinityDiscount": 0.3,
-    "affinityDiscountNote": "Jutsu đúng Chakra Affinity: learnCostSP * 0.7 (làm tròn lên)"
+    "affinityDiscountNote": "Jutsu đúng Chakra Affinity: learnCostSP * 0.7 (làm tròn lên)",
+    "maxLearnableTier": 2,
+    "maxLearnableTierNote": "v0.1 gioi han hoc den Tier 2 - Tier 3-5 mo trong ban sau (tang so nay khi ready)"
   },
   "chakraSystem": {
     "regenPerSecond": 3,

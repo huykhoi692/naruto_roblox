@@ -78,6 +78,14 @@ function ConfigLoader.getMaxLevel()
 	return ps.maxLevel or 50
 end
 
+-- Tier jutsu tối đa có thể học trong phiên bản hiện tại
+-- v0.1 = 2 (Tier 1–2 only). Tăng số này trong balance-config khi mở thêm content.
+function ConfigLoader.getMaxLearnableTier()
+	local data = getBalance()
+	if not data then return 2 end
+	return (data.skillPointSystem and data.skillPointSystem.maxLearnableTier) or 2
+end
+
 -- ============================================================
 -- EXP System
 -- ============================================================

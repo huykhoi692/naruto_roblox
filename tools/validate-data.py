@@ -236,6 +236,17 @@ if data["clan"] and data["balance"]:
         warn("noClanBonusSPCap=" + str(cap) + " in balance-config but not reflected in clan-data balanceNotes")
 
 # ============================================================
+# 7. balance-config: maxLearnableTier hợp lệ
+# ============================================================
+print("[7] balance-config: maxLearnableTier")
+if data["balance"]:
+    mlt = data["balance"].get("skillPointSystem", {}).get("maxLearnableTier")
+    if mlt is None:
+        warn("skillPointSystem.maxLearnableTier chua duoc set - ChakraAffinity.canLearnTier() dung fallback = 2")
+    elif not isinstance(mlt, int) or mlt < 1 or mlt > 5:
+        err("skillPointSystem.maxLearnableTier phai la integer 1-5, got: " + str(mlt))
+
+# ============================================================
 # Results
 # ============================================================
 print("\n" + "="*60)
