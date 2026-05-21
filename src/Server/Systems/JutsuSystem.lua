@@ -196,6 +196,16 @@ function JutsuSystem.equipJutsu(player, jutsuId, slotIndex)
 		return fail("not_learned")
 	end
 
+	-- Scope guard: ngan equip neu jutsu vuot tier/arc (vi du: maxLearnableTier bi ha sau khi da hoc)
+	if not ChakraAffinity.canLearnTier(jutsu.tier or 1) then
+		warn("[JutsuSystem] equipJutsu: tier_locked --", jutsuId, "Tier", jutsu.tier)
+		return fail("tier_locked")
+	end
+	if (jutsu.arcUnlock or 1) > profile.currentArc then
+		warn("[JutsuSystem] equipJutsu: arc_locked --", jutsuId, "arcUnlock", jutsu.arcUnlock)
+		return fail("arc_locked")
+	end
+
 	if type(slotIndex) ~= "number" or slotIndex < 1 or slotIndex > 6 then
 		warn("[JutsuSystem] equipJutsu: slotIndex khong hop le:", slotIndex)
 		return fail("invalid_slot")
@@ -396,7 +406,9 @@ end
 -- ============================================================
 -- Public API -- getCastInfo (cho CombatCalculator Phase 6)
 -- ============================================================
--- Lay thong tin cast da ap affinity multiplier -- KHONG thay doi state.
+-- Low-level info helper: tinh castInfo voi affinity multiplier -- KHONG thay doi state.
+-- KHONG enforce tier/arc scope -- scope enforcement la trach nhiem cua castJutsu()
+-- va canCastJutsu() (tuong lai). Goi ham nay truc tiep chi de doc thong tin, khong de cast.
 -- Returns table hoac nil.
 -- Fields: jutsuId, tier, chakraType, baseDamage, finalDamage, baseCost, finalCost,
 --         cooldown, castTime, range, aoeRadius, isAffinity, costMult, damageMult,
